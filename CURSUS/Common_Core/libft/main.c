@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 11:40:53 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/24 11:59:52 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/24 18:39:57 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@
 
 int	main(void)
 {
-	int		i;
-	char	**tab;
+	char			*str;
+	unsigned int	start;
+	size_t			len;
+	char			*res;
 
-	i = 0;
-	tab = ft_split("      split       this for   me  !       ", ' ');
-	while (tab[i])
-	{
-		printf("string %d : %s\n", i, tab[i]);
-		i++;
-	}
+	str = "HOLA MUNDO HELLO WORLD";
+	start = 5;
+	len = 50;
+	res = ft_substr(str, start, len);
+	printf("%s", res);
 	return (0);
 }

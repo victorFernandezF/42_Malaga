@@ -6,25 +6,24 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 12:38:11 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/23 09:53:04 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/24 17:45:09 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	char		*str;
+	unsigned int	i;
 
-	str = (char *)s;
-	while (*str != c)
+	i = 0;
+	while (s[i])
 	{
-		if (*str == '\0')
-		{
-			return (NULL);
-		}
-		str++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	return (str);
+	if ((char)c == s[i])
+		return ((char *)&s[i]);
+	return (NULL);
 }
