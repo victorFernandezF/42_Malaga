@@ -6,21 +6,23 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:38:52 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/20 18:39:18 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:19:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_bzero(void *b, size_t len)
+void	*ft_bzero(void *s, size_t n)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < len)
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		((unsigned char *)b)[i] = 0;
+		((unsigned char *)s)[i] = 0;
 		i++;
 	}
-	return (b);
+	return (s);
 }

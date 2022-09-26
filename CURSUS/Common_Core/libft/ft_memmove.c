@@ -6,13 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 18:11:11 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/23 09:46:03 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:27:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include"libft.h"
 
-void	*ft_memmove(void *dst, void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*des_aux;
 	char	*src_aux;

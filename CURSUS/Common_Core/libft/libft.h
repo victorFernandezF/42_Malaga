@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/24 14:18:38 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/26 10:58:37 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,38 +16,41 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *b, int c, int len);
-void	*ft_bzero(void *b, size_t len);
-void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	*ft_memmove(void *dst, void *src, size_t len);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-void	*ft_memchr(void *s, int c, size_t n);
-int		ft_memcmp(void *s1, void *s2, size_t n);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_isalpha(int c); //return 1 if c is alpha. Else return 0
+int		ft_isdigit(int c); //return 1 if c is a digit. Else return 0
+int		ft_isalnum(int c); //return 1 if c is alpha or a digit. Else return 0
+int		ft_isascii(int c); //return 1 if c is ascii. Else return 0
+int		ft_isprint(int c); //return 1 if c is printable. Else return 0
+size_t	ft_strlen(const char *s); //Returrn the number of characters of string.
+void	*ft_memset(void *b, int c, size_t len); //writes n bytes of c to string
+void	*ft_bzero(void *s, size_t n); //writes n zeroed bytes to the string.
+void	*ft_memcpy(void *dst, const void *src, size_t n); //copy bytes des->src
+void	*ft_memmove(void *dst, const void *src, size_t len); //same but overlap
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);//copy src->dst
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);//concat dst->src
+int		ft_toupper(int c); //Convert a lowercase lettter to uppercase
+int		ft_tolower(int c); //Convert a uppercase lettter to lowercase
+char	*ft_strchr(const char *s, int c); //locate first ocurrence of c. ret str
+char	*ft_strrchr(const char *s, int c); //locate last ocurrence of c. ret str
+void	*ft_memchr(const void *s, int c, size_t n);//Locate first ocurrency of c
+int		ft_memcmp(void *s1, const void *s2, size_t n);//copy n bytes src to dst
+int		ft_strncmp(const char *s1, const char *s2, size_t n); //compare n char 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
-int		ft_atoi(const char *str);
-void	*ft_calloc(size_t count, size_t size); //rev
-char	*ft_strdup(char *s1);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char *s1, char *s2);
-char	*ft_strtrim(char *s1, char *set);
-char	**ft_split(char *s, char c);
-char	*ft_itoa(int n);
-char	*ft_strmapi(char *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_atoi(const char *str);//arrayToInt take the first digits of str(+-)
+void	*ft_calloc(size_t count, size_t size);//allocate memory. ret str(0) 
+char	*ft_strdup(char *s1);//allocate memori for a copy of s, ret the copy
+char	*ft_substr(char const *s, unsigned int start, size_t len);/*return a
+		string of a string "s" from start and with lenght len" */
+char	*ft_strjoin(char *s1, char *s2); //join to strings
+char	*ft_strtrim(char *s1, char *set);//remove the "set" from s1 begin & end
+char	**ft_split(char *s, char c);//ret array with "str" of "s" splitted by c
+char	*ft_itoa(int n);//IntegerToArray convert the int to str
+char	*ft_strmapi(char *s, char (*f)(unsigned int, char));/*ret a str whith
+		the result of apllying the function "f" to all charact of s */
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));/*Same but return
+		the string "s" modified applying the finction "f" to its characters*/
+void	ft_putchar_fd(char c, int fd); //putchar to a fd
+void	ft_putstr_fd(char *s, int fd); //putstr to a fd
+void	ft_putendl_fd(char *s, int fd);//putstr to a fd followed by a new line
+void	ft_putnbr_fd(int n, int fd);//put number to a fd
 #endif
