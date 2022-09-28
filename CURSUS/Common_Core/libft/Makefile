@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/09/26 09:36:59 by victofer         ###   ########.fr        #
+#    Updated: 2022/09/28 11:51:14 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,19 +22,22 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_split.c
-OBJ=*.o
-
+OBJ= $(SRC:.c=*.o)
+BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUS_OBJ =$(BONUS:.c=.o) 
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -crs $(NAME) $(OBJ)
 
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)

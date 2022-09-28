@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/26 10:58:37 by victofer         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:51:38 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+/*BONUS*/
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_isalpha(int c); //return 1 if c is alpha. Else return 0
 int		ft_isdigit(int c); //return 1 if c is a digit. Else return 0
@@ -53,4 +60,15 @@ void	ft_putchar_fd(char c, int fd); //putchar to a fd
 void	ft_putstr_fd(char *s, int fd); //putstr to a fd
 void	ft_putendl_fd(char *s, int fd);//putstr to a fd followed by a new line
 void	ft_putnbr_fd(int n, int fd);//put number to a fd
+/* BONUS */
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 #endif
