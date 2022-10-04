@@ -26,14 +26,14 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 	- Modificaremos un par de lineas del archivo /etc/ssh/sshd_config
 		- Descomentar line *port* e indicarle el puerto que deseemos, en este caso el *4242*
 		- Descomentar la linea *PermitRootLogin* y cambiar su contenido a *no*
-	-Modificaremos una line del archivo /etc/ssh/ssh_config
+	- Modificaremos una line del archivo /etc/ssh/ssh_config
 		- Descomentamos la linea *Port* e igual que antes, introducimos el puerto deseado, *4242* en este caso.
 	- Reiniciarremos ssh con *sudo service ssh restarrt*
 
 ### Instalar y configurar UFW
 - Instalacion
 	- instalamos con *sudo apt install ufw*
--Configurar
+- Configurar
 	- Habilitar ufw: sudo ufw enable
 	- Habilitar puertos: *sudo ufw allow [Puerto]*
 	- Deshabilitar puerto (esto para la evaluacion mayormente): *sudo del allow [Port]*
@@ -41,9 +41,9 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 
 ### Politica de contraseñas fuertes
 - modificar archivo /etc/login.defs
-	- linea "PASS_MAX_DAYS -> dias en los que expira la password (30)"
-	- linea "PASS_MIN_DAYS -> dias minimos para cambiar la password (2)"
-	- linea "PASS_WARN_AGE -> dias de antelacion para el mendaje de advertencia (7)"
+	- linea "PASS_MAX_DAYS" -> dias en los que expira la password (30)
+	- linea "PASS_MIN_DAYS" -> dias minimos para cambiar la password (2)
+	- linea "PASS_WARN_AGE" -> dias de antelacion para el mendaje de advertencia (7)
 - instalar libpam pwquality
 	- *sudo apt instal libpam-pwqualityl*
 - modificar archivo /etc/libpam.d/common-password
@@ -55,7 +55,19 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 		- **reject_username** -> No permite usar el nomnbre de usuario en la password 
 		- **difok=7** -> diferencia de caracteres entre antugua password y nueva
 		- **enforce_for_root** -> aplica estas reglas a la password del root
+- Despues de esto deberemos cambiar las passwors de todos los usuarios de nuestra maquina, incluido el root.
+	- con el comando *passwd* podremos hacerlo
 
+### Contraseñas fuertes para sudo
+- crear un archivo: /etc/sudoers.d/*[nombre_archivo]*
+- crear un directorio /var/log/sudo
+- modificar contenido del archivo creado hace un momento agregando lo siguiente:
+	- *Defaults passwd_tries=3* -> limita a 3 intentos
+	- *Defaults badpass_message="Te equivocaste de password amigo"* -> Mensaje personalizado al introducir password incorrecta
+	- *Defaults logfile="/var/log/sudo-sudo_config"* -> archivo de logs
+	- *Defaults log_input, log_ output* -> guarda logs tanto de input como de output de comanso ejecutados con sudo
+	- *Defaults requiretty* -> inicia TTY
+	- *Defaults secure_path* -> usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin/sbin:/snap/bin* -> rutas restringidas 
 
 
 
