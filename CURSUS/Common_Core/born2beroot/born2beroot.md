@@ -117,7 +117,7 @@ Veamos por encima los comandos que vamos a usar para recopilar esa informacion.
 	- wall -n "todas las variablea calculadas anteriormente"
 - ejemplo de script
 
-'''
+~~~
 #!bin/bash
 
 #ARCH
@@ -174,7 +174,7 @@ wall -n "
         LVM Use: $lvmu
 	[...]
 "
-''''
+~~~
 
 
 ### CRON
