@@ -118,6 +118,63 @@ Veamos por encima los comandos que vamos a usar para recopilar esa informacion.
 - ejemplo de script
 ####### Fotaca
 
+
+#!bin/bash
+
+#ARCH
+arch=$(uname -a)
+
+#CPUP
+cpup=$(grep "physical id" /proc/cpuinfo | wc -l)
+
+#CPUV
+cpuv=$(grep "processor" /proc/cpuinfo | wc -l)
+
+#RAM
+ramtotal=$(free --mega | awk '$1 == "Mem:" {print $2}')
+ramusage=$(free --mega | awk '$1 == "Mem:" {print $3}')
+ramperce=$(free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')
+
+#DISK
+disktotal=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_t += $2} END {printf("%.1fGb\n"), disk_t/1024}')
+diskusage=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} END {print disk_u}')
+diskperce=$(df -m | grep "/dev/" | grep -v "/boot" | awk '{disk_u += $3} {disk_t += $2} END {printf("%d"), disk_u/disk_t*100}')
+
+#CPU
+cpul=$(vmstat 1 4 |tail -1 | awk '{print $15}')
+cpu_op =$(expr 100 - $cpul)
+cpu_fin=$(printf "%.1f" $cpu_op)
+
+#LASTBOOT
+lastb=$(who -b | awk '$1 == "system" {print $3 " " $4}')
+
+#LVM
+lvmu=$(if [ $(lsblk | grep "lvm" | wc -l ) -gt 0 ]; then echo yes; else echo no; fi)
+
+#TCP
+tcp=$(ss -ta | grep ESTAB |wc -l)
+
+#USER
+users=$(users | wc -w)
+
+#NETWORK
+ip=$(hostname -I)
+mac=$(ip link |grep "link/ether" | awk '{print $2}')
+
+#SUDO
+sudo=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+
+wall -n "
+        Architecture: $arch
+        CPU Physical: $cpup
+        vCPU: $cpuvy
+        Ram Usage: $ramusage/$ramtotal ($ramperce%)
+        Disk Usage: $diskusage/$disktotal ($diskperce%)
+        Cpu load: $cpu_fin%
+        Last Boot: $lastb
+        LVM Use: $lvmu
+
+
 ### CRON
 
 Un cron es un programita que ejecuta un script cada cierto tiempo establecido.
