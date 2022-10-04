@@ -116,9 +116,8 @@ Veamos por encima los comandos que vamos a usar para recopilar esa informacion.
 - Para mostrar toda esta info usaremos el comando wall (wall -n para ocultar el banner, esto es opcional.)
 	- wall -n "todas las variablea calculadas anteriormente"
 - ejemplo de script
-####### Fotaca
 
-
+'''
 #!bin/bash
 
 #ARCH
@@ -173,6 +172,9 @@ wall -n "
         Cpu load: $cpu_fin%
         Last Boot: $lastb
         LVM Use: $lvmu
+	[...]
+"
+''''
 
 
 ### CRON
