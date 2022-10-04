@@ -9,6 +9,10 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 - comando *apt install sudo*
 - reinicial maquina: *sudo reboot*
 - para ver si se ha instalado correctamente podemos usar *sudo -V* que nos dara la version
+
+### Crear y eliminar usuarios
+- crear usuario: *sudo adduser [nombre_usuario]*
+- eliminar usuario: *userdel [nombre_usuario]*
   
 ### Crear gurpos y añadir usuarios a grupos.
 - crear grupos
@@ -69,6 +73,58 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 	- *Defaults requiretty* -> inicia TTY
 	- *Defaults secure_path* -> usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin/sbin:/snap/bin* -> rutas restringidas 
 
+### Conectarse mediante ssh a la maquinita virtual
+- Para ello necesitamos abrir el puerto 4242 en la maquina
+	- en la configuracion de la maquina, en network, advanced, port fordwarding, creamos uno nuevo.
+- desde la terminal del ordenador anfitrion (no la maquina) escribimos ssh *[nombre_usuario_de_la_maquina_virtual]*@localhost -p 4242
+	- Pedira la password del usuario introducido y si todo ha ido bien, se conectara. (Si tratamos den entrar con root nos debe decir que nanai)
+- ERROR DE SSH: En caso de que de un error por las clave ssh 
+	- ir a la carpeta *.ssh* en la raiz de nuestro usuario, abrir el aerrchivo known host y eliminar las lineas que sean referentes a localhost.
 
+### Script chulisimo que muestra informacion
+Crear un script llamado monitoring.sh que muestre al ejecutarlo cierta informacion sobre el sistema a todos los usuarios conectados.  
+Veamos por encima los comandos que vamos a usar para recopilar esa informacion.
 
- 
+- Arquitectura: uname -a
+- nucleo fisico: grep "physical id" /proc/cpuinfo | wl -l
+- nucleo virtual: grep "processor" /proc/cpuinfo | wl -l 
+- Uso de ram:
+	- Ram uso: free --mega | awk '$1 == "Mem:" {print $3}'
+	- Ram total: free --mega | awk '$1 == "Mem:" {print $2}'
+	- Ram Porcentaje: free --mega | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}'
+ 	- *A la hora de mostrarrlo escribiremos en formato [ram_uso]/[ram_total] ([ram_porcentaje])* ej: 4.5/500 (10%)
+- Uso de disco
+	- disktotal: df -m | grep "/dev/" | grep "/boot" -v | awk '{disk_t += $2} END {printf("%.1Gb\n"), disk_t/1024}' 
+	- diskk_use: df -m | grep "/dev/" | grep "/boot" -v | awk '{disk_u += $3} END {print disk_u}'
+	- disk_porcent: df -m | grep "/dev/" | grep "/boot" -v | awk '{disk_t += $2} {disk_u += $3} END {printf("%d"), disk_u/disk_t*100}'
+	- *Para mostrarlo se usara el mismo formato que antes.*
+- cpu
+	- vm stat 1 4 | tail -1 | awk '{print $15}'
+- ultimo inicio
+	- who -b | awk '$1 == "system" {print $3 " " $4}'
+- uso LVM
+	- if [ $(lsblk | grep "lvm" |wp -l) -gt 0 ]: then echo yes: echo no: fi 
+- conexion TCP
+	- ss -ta | grep ESTAB | wc -l
+- Numero Usuarios
+	- users | wc -w
+- ip y mac
+	- ip: hostname -I
+	- mac: ip link | grep "link/ether" | awk '{print $2}'
+- Numero de comandos sudo
+	- journalctl _COMM=sudo |grep COMMAND |wc -l
+- Para mostrar toda esta info usaremos el comando wall (wall -n para ocultar el banner, esto es opcional.)
+	- wall -n "todas las variablea calculadas anteriormente"
+- ejemplo de script
+####### Fotaca
+
+### CRON
+
+Un cron es un programita que ejecuta un script cada cierto tiempo establecido.
+- con el comando sudo crontab -u root -e vamos a agregar una linea a un archivo.
+	- en este caso se va a ejecutar cada 10 minutos, asi que pondremos: */10 * * * * /home/monitoring.sh
+- para parar un cron y que deje de ejecutarse repetidas veces, usaremos el comando *sudo /etc/init.d/cron stop*
+- para iniciarlo de nuevo, es igual pero start en lugar de stop
+- estos dos ultimos apartados son muy utiles a la hotra de la evaluacion. 
+
+### FIN DE LA PARTE OBLIGATORIA
