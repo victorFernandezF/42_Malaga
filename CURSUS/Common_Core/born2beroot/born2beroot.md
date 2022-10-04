@@ -1,6 +1,7 @@
 
 # BORN2BEROOT
 
+Mini tutorial con algunos comandos y utilidades que podrian servir de ayuda a la hora de realizar este proyecto.    
 Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 
 ### Instalacion de Sudo
@@ -80,6 +81,11 @@ Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
 	- Pedira la password del usuario introducido y si todo ha ido bien, se conectara. (Si tratamos den entrar con root nos debe decir que nanai)
 - ERROR DE SSH: En caso de que de un error por las clave ssh 
 	- ir a la carpeta *.ssh* en la raiz de nuestro usuario, abrir el aerrchivo known host y eliminar las lineas que sean referentes a localhost.
+
+#### Ver y modificar hostname (util en evaluacion)
+
+- Para ver el hostname de la maquina, y tambien la version del SO instalado usaremos el comando *sudo hostnamectl*
+- Para modificar en hostname usaremos: *sudo hostnamectl set-hostname [nuevo_nombre]* 
 
 ### Script chulisimo que muestra informacion
 Crear un script llamado monitoring.sh que muestre al ejecutarlo cierta informacion sobre el sistema a todos los usuarios conectados.  
@@ -187,3 +193,19 @@ Un cron es un programita que ejecuta un script cada cierto tiempo establecido.
 - estos dos ultimos apartados son muy utiles a la hotra de la evaluacion. 
 
 ### FIN DE LA PARTE OBLIGATORIA
+
+## BONUS
+La parte bonus nos pide la instalacion y configuracion de wordpress, MariaDB, php y un servici de tu eleccion que no sea ENNGINX ni apache. (en mi caso he elegido ftp)
+
+### Instalar MariaDB
+- Instalacion
+	- vamos a instalar lighttpd: *sudo apt install lighttpd
+	- habilitamos el puerto 80 como ya vimos antes.
+	- instalamos mariaDB' *suo apt install mariadb-server*
+	- entramos con: *sudo mariadb* y nos logueamos.
+- Crear base de datos
+	- CREATE DATABASE *[nombre_BD]*;
+	- GRANT ALL ON *[nombre_BD]*.'\*' TO *'[nombre_usuario]'*@'localhost' IDENTIFIED BY *[password]* WITH GRANT OPTION;
+	- FLUSH PRIVILEGES;
+	- para salir de MariaDB usaremos: *exit;*
+	- para ver las bases de datos usaremos: *SHOW DATABASES*
