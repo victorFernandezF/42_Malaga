@@ -222,4 +222,42 @@ La parte bonus nos pide la instalacion y configuracion de wordpress, MariaDB, ph
 - Ya podemos eliminar el directorio wordpress *sudo rmdir /var/www/html/wordpress*
 - Crear wp-config: *sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php*
 	- Introducir la base de datos: sudo vi* /var/www/html/wp-config.php*
-		- lineas: 23 26 29
+		- lineas: 23 26 29 tal que asi:
+			~~~~
+			define( 'DB_NAME', '*base_de_datod*' );
+			define( 'DB_USER', '*usuarior*' );
+			define( 'DB_PASSWORD', '*password*' );
+			~~~~
+	- #### IMPORTANTE: **No olvide habilitar el puerto 80 en virtualbox o todo esto habra sido en bano **
+	- Para probar el funcionamiento, debemos ir al navegador de nuestro ordenador, la maquina virtual no. y poner localhost (o la ip de tu equipo). Deberia abrirse la pagina de configuracion de wordpress.
+
+### SERVICIO DE TU ELECCION (EN ESTE CASO FTP)
+- vamos a instalar ftp: *sudo apt install vsftpd* <- esto es el ftp server
+- vamos a permitir el puerto 21 con ufw, si ha llegado hasta aqui ya sabe hacer esto.
+- con *sudo vi /etc/vsftp.conf* vamos a descomentar la linea que siguiente: *write_enable=YES* 
+- vamos a crear dos directorios
+	- /home/*[nombre_usuario]*/ftp
+	- /home/*[nombre_usuario]*/ftp/files
+- *sudo chown nobody:nogroup / home/*[nombre_usuario]*/ftp 
+- *sudo chmod a-w /home/[nombre_usuario]/ftp*
+- Modificamos el archivo vsftpd.conf
+	- añadimos las siguientes lineas:
+	~~~~
+	user_sub_token=$USER
+	local_root=/home/$USER/ftp
+	~~~~
+	-Descomentar la linea "*chroot_local_user=YES*" debe estar cerca de la linea 114
+- Whitelist
+	- *sudo vi /etc/vsftpd.userlist*
+	- Agregrar usuario a la lista: *echo [usuario] | sudo tee -a /etc/vsftpd.userlist*
+	- Agregar las siguientes lineas:
+	~~~~
+	userlist_enabble=YES
+	userlist_file=/etc/vsftpd.userlist
+	userlist_deny=NO
+	~~~~
+- #### IMPORTANTE: **Al igual que con wordpress, NO olvide habilitar el puerto 21 en virtualbox.**
+- para probar que esta todo ok, iremos al navegador del ordenador (no VM) y pondremos: *ftp://[ip de tu equipo]*
+	- nos va a pedir un usuario y password. pondremos el user y pass de la maquina virtual y deberia conectarse.
+
+## FIN
