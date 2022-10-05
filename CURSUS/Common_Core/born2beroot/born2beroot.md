@@ -2,25 +2,25 @@
 # BORN2BEROOT
 
 Mini tutorial con algunos comandos y utilidades que podrian servir de ayuda a la hora de realizar este proyecto.    
-Ubicacion del .vdi de la maquina: "/sgoinfre/goinfre/Perso/*login*"
+Ubicacion del .vdi de la maquina: =="/sgoinfre/goinfre/Perso/*login*"==
 
 ### Instalacion de Sudo
 
 - comando *su*, para pasar a ser root.
-- comando *apt install sudo*
+- comando ==*apt install sudo*==
 - reinicial maquina: *sudo reboot*
 - para ver si se ha instalado correctamente podemos usar *sudo -V* que nos dara la version
 
 ### Crear y eliminar usuarios
-- crear usuario: *sudo adduser [nombre_usuario]*
-- eliminar usuario: *userdel [nombre_usuario]*
+- crear usuario: ==*sudo adduser [nombre_usuario]*==
+- eliminar usuario: ==*userdel [nombre_usuario]*==
   
 ### Crear gurpos y añadir usuarios a grupos.
 - crear grupos
-	- sudo addgroup *[nombre_grupo]*
+	- Se crea con el comando: ==sudo addgroup *[nombre_grupo]*==
 	- para ver que se ha creado podemos usar: getent group *[nombre_grupo]*, esto nos va a dar el ID del grupo.
 - agregar usuario a un grupo
-	- sudo adduser *[nombre_usuario]* *[nombre_grupo]*
+	- ==sudo adduser *[nombre_usuario]* *[nombre_grupo]*==
 
 ### Instalar y configurar SSH
 - Instalacion
