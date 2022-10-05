@@ -2,18 +2,18 @@
 # BORN2BEROOT
 
 Mini tutorial con algunos comandos y utilidades que podrian servir de ayuda a la hora de realizar este proyecto.    
-Ubicacion del .vdi de la maquina: =="/sgoinfre/goinfre/Perso/*login*"==
+Ubicacion del .vdi de la maquina: **"/sgoinfre/goinfre/Perso/*login*"**
 
 ### Instalacion de Sudo
 
 - comando *su*, para pasar a ser root.
-- comando ==*apt install sudo*==
+- comando ***apt install sudo***
 - reinicial maquina: *sudo reboot*
 - para ver si se ha instalado correctamente podemos usar *sudo -V* que nos dara la version
 
 ### Crear y eliminar usuarios
-- crear usuario: ==*sudo adduser [nombre_usuario]*==
-- eliminar usuario: ==*userdel [nombre_usuario]*==
+- crear usuario: **sudo adduser [nombre_usuario]**
+- eliminar usuario: **userdel [nombre_usuario]**
   
 ### Crear gurpos y añadir usuarios a grupos.
 - crear grupos
@@ -25,8 +25,8 @@ Ubicacion del .vdi de la maquina: =="/sgoinfre/goinfre/Perso/*login*"==
 ### Instalar y configurar SSH
 - Instalacion
 	- Actualizaremos repositorios con *sudo apt update*
-	- Instalaremos ssh con: *sudo apt install openssh-server*
-	- ver estado de ssh con: *sudo service ssh status*
+	- Instalaremos ssh con: **sudo apt install openssh-server**
+	- ver estado de ssh con: **sudo service ssh status**
 - Configuracion
 	- Modificaremos un par de lineas del archivo /etc/ssh/sshd_config
 		- Descomentar line *port* e indicarle el puerto que deseemos, en este caso el *4242*
@@ -37,11 +37,11 @@ Ubicacion del .vdi de la maquina: =="/sgoinfre/goinfre/Perso/*login*"==
 
 ### Instalar y configurar UFW
 - Instalacion
-	- instalamos con *sudo apt install ufw*
+	- instalamos con **sudo apt install ufw**
 - Configurar
-	- Habilitar ufw: sudo ufw enable
-	- Habilitar puertos: *sudo ufw allow [Puerto]*
-	- Deshabilitar puerto (esto para la evaluacion mayormente): *sudo del allow [Port]*
+	- Habilitar ufw: **sudo ufw enable**
+	- Habilitar puertos: **sudo ufw allow [Puerto]**
+	- Deshabilitar puerto (esto para la evaluacion mayormente): **sudo del allow [Port]**
 	- ver estado: *sudo ufw status*
 
 ### Politica de contraseñas fuertes
@@ -209,3 +209,17 @@ La parte bonus nos pide la instalacion y configuracion de wordpress, MariaDB, ph
 	- FLUSH PRIVILEGES;
 	- para salir de MariaDB usaremos: *exit;*
 	- para ver las bases de datos usaremos: *SHOW DATABASES*
+
+### INSTALAR PHP
+- Instalaremos php con el comando: *sudo apt install php-cgi php mysql*
+
+### INSTALAR WORDPRESS
+- Instalaremos wget con e comando: *sudo apt install wget*
+- Descargaremos wordpress: *sudo wget http://wordpress.org/latest.tar.gz -p /var/www/html*
+- Descomprimiremos el archivo descargado: *sudo tar -xvf /var/www/html/[archivo_a_descomprimir] -C [Destino_del_contenido]*
+- ya podemos borrar el archiivo comprimido.
+- Copiamos el contenido descomprimido a la carpeta html: *sudo cp -r /var/www/html/wordpress.\* /var/www/html/*
+- Ya podemos eliminar el directorio wordpress *sudo rmdir /var/www/html/wordpress*
+- Crear wp-config: *sudo cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php*
+	- Introducir la base de datos: sudo vi* /var/www/html/wp-config.php*
+		- lineas: 23 26 29
