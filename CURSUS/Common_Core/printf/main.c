@@ -6,10 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:09 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/08 11:16:24 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:09:17 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 #include "ft_printf.h"
 int	main(void)
 {
@@ -44,4 +45,4 @@ int	main(void)
 	printf("	og printf: %s\n", s);
 	ft_printf("	my printf: %s\n\n", s);
 	return (0);
-}
+} */

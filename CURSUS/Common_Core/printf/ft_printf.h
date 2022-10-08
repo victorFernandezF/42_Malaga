@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:45:51 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/08 10:54:04 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/08 12:28:28 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,6 @@ char		*ft_unsigned_itoa(unsigned int n);
 int			ft_print_ptr(unsigned long long ptr);
 void		ft_putchar(char c);
 int			ft_print_string(char *s);
-void		ft_putendl(char *s);
 int			ft_print_int(int n);
 int			ft_print_hexa(unsigned int num, char format);
-int			ft_atoi(const char *str);
-char		*ft_join(char *str, char ch);
-void		ft_putstr_fd(char *s, int fd);
-char		*ft_itoa(int n);
 #endif
