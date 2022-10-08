@@ -6,4 +6,4 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 
 ### ESTADO
 
-´´´ En proceso ´´´
+´´´En proceso´´´
