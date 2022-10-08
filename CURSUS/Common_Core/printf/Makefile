@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 11:35:46 by victofer          #+#    #+#              #
-#    Updated: 2022/10/06 18:52:35 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/07 19:32:20 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ CC=cc
 NAME=libftprintf.a
 CFLAGS=-Wall -Wextra -Werror
 OPTIONS=-c -I.
-SRC = ft_printf.c ft_putvarious.c ft_print_unsigned.c
+SRC = ft_printf.c ft_print_char_str.c ft_print_number.c ft_print_unsigned.c \
+		ft_print_hexa.c ft_atoi.c ft_join.c ft_itoa.c ft_print_ptr.c
 OBJ= $(SRC:.c=*.o)
 #BONUS = 
 #BONUS_OBJ =$(BONUS:.c=.o) 

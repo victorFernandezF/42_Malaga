@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_hexa.c                                       :+:      :+:    :+:   */
+/*   ft_join.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 19:22:04 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/06 19:34:56 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/07 12:40:26 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/07 12:58:17 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_print_hexa_lower(int num)
+char	*ft_join(char *str, char ch)
 {
-	
-	int		n;
+	int		i;
+	int		j;
+	char	*new;
 
-	n = num / 16;printf("%d", n);
-	while (n > 16)
+	i = 0;
+	j = 0;
+	while (str[i])
+		i++;
+	new = (char *)malloc(sizeof(char) * (i + 2));
+	if (!new)
+		return (NULL);
+	while (j < i)
 	{
-		printf("%d", n / 16);
-		n = n / 16;
+		new[j] = str[j];
+		j++;
 	}
-	
-	return (n);
+	new[j] = ch;
+	new[j + 1] = '\0';
+	return (new);
 }
+
+/* int	main(void)
+{
+	char	*str;
+	char	ch;
+
+	str = "HOLA";
+	ch = 'S';
+	printf("%s", ft_join(str, ch));
+} */

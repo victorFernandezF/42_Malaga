@@ -1,62 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unsigned.c                                :+:      :+:    :+:   */
+/*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 12:25:34 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/07 18:57:47 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/07 11:36:17 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/08 11:16:51 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_unsigned_len(unsigned int n)
+static int	ft_ptr_len(uintptr_t ptr)
 {
 	int	len;
 
 	len = 0;
-	while (n != 0)
+	while (ptr != 0)
 	{
 		len++;
-		n = n / 10;
+		ptr = ptr / 16;
 	}
 	return (len);
 }
 
-char	*ft_unsigned_itoa(unsigned int n)
+static void	ft_put_ptr(uintptr_t ptr)
 {
-	char	*num;
-	int		len;
-
-	len = ft_unsigned_len(n);
-	num = (char *)malloc(sizeof(char) * len + 1);
-	if (!num)
-		return (NULL);
-	num[len] = '\0';
-	while (n != 0)
+	if (ptr >= 16)
 	{
-		num[len - 1] = n % 10 + 48;
-		n = n / 10;
-		len--;
+		ft_put_ptr(ptr / 16);
+		ft_put_ptr(ptr % 16);
 	}
-	return (num);
-}
-
-int	ft_print_unsigned(unsigned int n)
-{
-	int		ret;
-	char	*number;
-
-	ret = 0;
-	if (n == 0)
-		ret += ft_print_char('0');
 	else
 	{
-		number = ft_unsigned_itoa(n);
-		ret += ft_print_string(number);
-		free(number);
+		if (ptr <= 9)
+			ft_putchar(ptr + '0');
+		else
+			ft_putchar(ptr - 10 + 'a');
+	}
+}
+
+int	ft_print_ptr(unsigned long long ptr)
+{
+	int	ret;
+
+	ret = 0;
+	ret += write(1, "0x", 2);
+	if (ptr == 0)
+		ret += write(1, "0", 1);
+	else
+	{
+		ft_put_ptr(ptr);
+		ret += ft_ptr_len(ptr);
 	}
 	return (ret);
 }
