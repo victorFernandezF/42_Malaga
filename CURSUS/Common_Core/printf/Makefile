@@ -6,11 +6,11 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 11:35:46 by victofer          #+#    #+#              #
-#    Updated: 2022/10/10 10:59:49 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/10 12:13:34 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=gcc
+CC=cc
 NAME=libftprintf.a
 CFLAGS=-Wall -Wextra -Werror
 OPTIONS=-c -I.

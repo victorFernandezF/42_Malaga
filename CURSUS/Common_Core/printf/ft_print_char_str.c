@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:29:14 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 10:32:36 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 13:09:40 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, sizeof(c));
 }
 
-void	ft_putstr(char *s, int fd)
+static void	ft_putstr(char *s, int fd)
 {
 	int	i;
 
