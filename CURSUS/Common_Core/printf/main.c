@@ -6,12 +6,12 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:09 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/08 12:09:17 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 11:04:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
 #include "ft_printf.h"
+
 int	main(void)
 {
 	int				d;
@@ -25,7 +25,6 @@ int	main(void)
 	x = 42;
 	c = 'h';
 	s = "hello world";
-
 	ft_printf("\nImprime numero [%%d / %%i]:\n");
 	printf("	og printf: %d\n", d);
 	ft_printf("	my printf: %d\n", d);
@@ -43,6 +42,6 @@ int	main(void)
 	ft_printf("	my printf: %c\n", c);
 	ft_printf("\nImprime string [%%s]:\n");
 	printf("	og printf: %s\n", s);
-	ft_printf("	my printf: %s\n\n", s);
+	ft_printf("	my printf: %s\n", s);
 	return (0);
-} */
+}
