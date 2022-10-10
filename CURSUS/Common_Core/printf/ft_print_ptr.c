@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:36:17 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/08 11:16:51 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:06:39 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void	ft_put_ptr(uintptr_t ptr)
 	else
 	{
 		if (ptr <= 9)
-			ft_putchar(ptr + '0');
+			ft_putchar_fd(ptr + '0', 1);
 		else
-			ft_putchar(ptr - 10 + 'a');
+			ft_putchar_fd(ptr - 10 + 'a', 1);
 	}
 }
 

@@ -6,16 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:29:14 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 13:09:40 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:07:08 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, sizeof(c));
-}
 
 static void	ft_putstr(char *s, int fd)
 {
@@ -25,7 +20,7 @@ static void	ft_putstr(char *s, int fd)
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar_fd(s[i], 1);
 		i++;
 	}
 }
@@ -49,7 +44,7 @@ int	ft_print_string(char *s)
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar_fd(s[i], 1);
 		i++;
 	}
 	return (i);

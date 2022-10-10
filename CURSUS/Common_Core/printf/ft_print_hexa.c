@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 19:22:04 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/07 19:22:43 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:05:05 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ static int	ft_hex_lower_upper(int num, char format, int i)
 {
 	if (format == 'x')
 	{
-		ft_putchar(num - 10 + 'a');
+		ft_putchar_fd(num - 10 + 'a', 1);
 		i++;
 	}
 	if (format == 'X')
 	{
-		ft_putchar(num -10 + 'A');
+		ft_putchar_fd(num -10 + 'A', 1);
 		i++;
 	}
 	return (i);
@@ -54,7 +54,7 @@ static int	ft_print_hexadecimal(unsigned int num, char format)
 	{
 		if (num <= 9)
 		{
-			ft_putchar(num + 48);
+			ft_putchar_fd(num + 48, 1);
 			i++;
 		}
 		else

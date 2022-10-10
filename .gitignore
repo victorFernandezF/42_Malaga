@@ -4,3 +4,5 @@ main.c
 *.o
 *.txt
 test.*
+*.swp
+*.dSYM

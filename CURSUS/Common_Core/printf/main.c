@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:09 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 13:22:17 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 18:02:42 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ int	main(void)
 	c = 'h';
 	s = "hello world";
 	ft_printf("\nImprime numero [%%d / %%i]:\n");
-	printf("	og printf: %d\n", d);
-	ft_printf("	my printf: %d\n", d);
+	printf("	printf real: %d\n", d);
+	ft_printf("	printf mio : %d\n", d);
 	ft_printf("\nImprime unsigned [%%u]:\n");
-	printf("	og printf: %u\n", u);
-	ft_printf("	my printf: %u\n", u);
-	ft_printf("\nImprime puntero void 8 [%%p]:\n");
-	printf("	og printf: %p\n", &p);
-	ft_printf("	my printf: %p\n", &p);
+	printf("	printf real: %u\n", u);
+	ft_printf("	printf mio : %u\n", u);
+	ft_printf("\nImprime puntero void * [%%p]:\n");
+	printf("	printf real: %p\n", &p);
+	ft_printf("	printf mio : %p\n", &p);
 	ft_printf("\nImprime numero en hexadecimal minusculas [%%x]:\n");
-	printf("	og printf: %x\n", x);
-	ft_printf("	my printf: %x\n", x);
+	printf("	printf real: %x\n", x);
+	ft_printf("	printf mio : %x\n", x);
 	ft_printf("\nImprime numero en hexadecimal mayusculas [%%X]:\n");
-	printf("	og printf: %X\n", x);
-	ft_printf("	my printf: %X\n", x);
+	printf("	printf real: %X\n", x);
+	ft_printf("	printf mio : %X\n", x);
 	ft_printf("\nImprime caracter [%%c]:\n");
-	printf("	og printf: %c\n", c);
-	ft_printf("	my printf: %c\n", c);
+	printf("	printf real: %c\n", c);
+	ft_printf("	printf mio : %c\n", c);
 	ft_printf("\nImprime string [%%s]:\n");
-	printf("	og printf: %s\n", s);
-	ft_printf("	my printf: %s\n", s);
+	printf("	printf real: %s\n", s);
+	ft_printf("	printf mio : %s\n", s);
 	return (0);
 }
