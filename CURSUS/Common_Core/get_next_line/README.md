@@ -1,4 +1,4 @@
-# GET_NEXT_LINE
+# :page_facing_up: GET_NEXT_LINE
 
 #### Resumen
 El objetivo de este proyecto es simple: programar una función que devuelva
