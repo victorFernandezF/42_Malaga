@@ -6,7 +6,7 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 
 ### ESTADO
 #### Finalizado
-- ``` RESULTADO: 100 %```
+- ``` RESULTADO: 100%```
 
 <hr/>
 
@@ -21,4 +21,4 @@ be allowed to use your ft_printf in all your future projects.
 
 ### STATUS
 #### Finished
-- ``` RESULT: 100 %```
+- ``` RESULT: 100%```
