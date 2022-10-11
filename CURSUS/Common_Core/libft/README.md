@@ -1,4 +1,5 @@
 # :books: LIBFT
+[result]:100%
 ##### Resumen
 Programar en C puede ser aburrido cuando uno no tiene acceso a las funciones comunes más utilizadas. Este proyecto te permitirá entender la forma en la que estas funciones
 funcionan, cómo implementarlas y aprender a utilizarlas. Crearás una librería propia, que
@@ -74,4 +75,3 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_lstmap
 
 <!--- ```MAS FUNCIONES``` --->
-
