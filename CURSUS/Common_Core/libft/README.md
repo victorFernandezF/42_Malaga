@@ -1,4 +1,4 @@
-# LIBFT
+# :books: LIBFT
 ##### Resumen
 Programar en C puede ser aburrido cuando uno no tiene acceso a las funciones comunes más utilizadas. Este proyecto te permitirá entender la forma en la que estas funciones
 funcionan, cómo implementarlas y aprender a utilizarlas. Crearás una librería propia, que
