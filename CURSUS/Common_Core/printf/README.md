@@ -1,4 +1,4 @@
-# FT_PRINTF
+# :fax: FT_PRINTF
 
 #### Resumen
 El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf().
