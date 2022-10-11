@@ -6,13 +6,14 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/28 11:51:38 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:04:21 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdio.h>
+# include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -71,4 +72,14 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
+/* ADDED */
+int		ft_printf(char const *input, ...);
+int		ft_print_char(int c);
+int		ft_print_unsigned(unsigned int n);
+char	*ft_unsigned_itoa(unsigned int n);
+int		ft_print_ptr(unsigned long long ptr);
+void	ft_putchar(char c);
+int		ft_print_string(char *s);
+int		ft_print_int(int n);
+int		ft_print_hexa(unsigned int num, char format);
 #endif

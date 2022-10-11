@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_number.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 11:40:53 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/24 18:39:57 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/04 18:04:13 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/11 18:02:18 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <string.h>
 #include "libft.h"
 
-int	main(void)
+int	ft_print_int(int n)
 {
-	char			*str;
-	unsigned int	start;
-	size_t			len;
-	char			*res;
+	int		ret;
+	char	*num;
 
-	str = "HOLA MUNDO HELLO WORLD";
-	start = 5;
-	len = 50;
-	res = ft_substr(str, start, len);
-	printf("%s", res);
-	return (0);
+	ret = 0;
+	num = ft_itoa(n);
+	ret += ft_print_string(num);
+	free (num);
+	return (ret);
 }
