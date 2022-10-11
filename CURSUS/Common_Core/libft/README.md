@@ -1,4 +1,4 @@
-# :books: LIBFT
+# :books: LIBFT [SP]
 [result]:100%
 ##### Resumen
 Programar en C puede ser aburrido cuando uno no tiene acceso a las funciones comunes más utilizadas. Este proyecto te permitirá entender la forma en la que estas funciones
@@ -8,7 +8,15 @@ Asegúrate de ir enriqueciendo tu libft a lo largo de tu cursus. Sin embargo, cu
 utilices tu librería asegúrate de que todas las funciones utilizadas por tu librería respetan
 las permitidas por cada proyecto.
 
-#### Summary
+### ESTADO
+#### Finalizado
+
+- ```RESULTADO: 100%```
+
+<hr/>
+
+# :books: LIBFT [EN]
+#### Summary  
 C programming can be very tedious when one doesn’t have access to those highly useful
 standard functions. This project makes you to take the time to re-write those functions,
 understand them, and learn to use them. This library will help you for all your future C
@@ -17,15 +25,12 @@ Through this project, we also give you the opportunity to expand the list of fun
 with your own. Take the time to expand your libft throughout the year.
 
 
-### ESTADO
-#### Finalizado
-
-- ```RESULTADO: 100%```
-
 ### STATUS
 #### Finished
 
 - ```RESULT: 100%```
+
+<hr/>
 
 #### FUNCTIONS
 - isalpha
