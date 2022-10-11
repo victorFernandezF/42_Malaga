@@ -80,12 +80,12 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_lstmap
 
 ```MORE FUNCTIONS```
-###### printf
-- ft_printf
-- ft_print_char
-- ft_print_unsigned
-- ft_unsigned_itoa
-- ft_print_ptr
-- ft_print_string
-- ft_print_int
-- ft_print_hexa
+- ###### printf
+	- ft_printf
+	- ft_print_char
+	- ft_print_unsigned
+	- ft_unsigned_itoa
+	- ft_print_ptr
+	- ft_print_string
+	- ft_print_int
+	- ft_print_hexa
