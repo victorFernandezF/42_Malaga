@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/11 18:21:52 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/11 18:36:33 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void	ft_putchar_fd(char c, int fd); //putchar to a fd
 void	ft_putstr_fd(char *s, int fd); //putstr to a fd
 void	ft_putendl_fd(char *s, int fd);//putstr to a fd followed by a new line
 void	ft_putnbr_fd(int n, int fd);//put number to a fd
+
 /* BONUS */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
