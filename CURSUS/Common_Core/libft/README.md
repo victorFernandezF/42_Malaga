@@ -10,9 +10,7 @@ las permitidas por cada proyecto.
 ### ESTADO
 #### Finalizado
 
-- ```Parte Obligatoria: 100 %```   
-- Parte Bonus: Esperando evaluacion    
-- ```TOTAL: 100 %```
+- ```RESULTADO: 100 %```
 
 #### FUNCIONES AÑADIDAS
 - isalpha
@@ -60,5 +58,6 @@ las permitidas por cada proyecto.
 - ft_lstclear
 - ft_lstiter
 - ft_lstmap
-<!--- ```MORE FUNCTIONS ADDED``` --->
+
+<!--- ```MAS FUNCIONES``` --->
 
