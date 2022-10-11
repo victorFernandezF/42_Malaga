@@ -32,7 +32,9 @@ with your own. Take the time to expand your libft throughout the year.
 
 <hr/>
 
-#### FUNCTIONS
+### FUNCTIONS
+```BASIC FUNCTIONS```
+
 - isalpha
 - isdigit
 - isalnum
