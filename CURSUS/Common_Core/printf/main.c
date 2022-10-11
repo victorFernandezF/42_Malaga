@@ -6,12 +6,12 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:09 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 18:02:42 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/10 19:24:11 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
+ 
 int	main(void)
 {
 	int				d;
