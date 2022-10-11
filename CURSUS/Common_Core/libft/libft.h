@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/11 18:36:33 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/11 19:11:12 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /* ADDED */
+void	ft_put_hexa(unsigned int num);
+//ft_pritnf
 int		ft_printf(char const *input, ...); //Something like prinf
 int		ft_print_char(int c); //Print a char and return the num of chars printed
 int		ft_print_unsigned(unsigned int n); //print an unsigned int (ret)

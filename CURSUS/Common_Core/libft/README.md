@@ -82,6 +82,8 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_lstmap
 
 ```MORE FUNCTIONS```
+- ft_put_hexa
+
 - ###### printf
 	- ft_printf
 	- ft_print_char
