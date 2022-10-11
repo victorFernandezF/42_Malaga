@@ -10,6 +10,4 @@ tu propio sistema operativo utilizando reglas estrictas.
 ### ESTADO
 #### Finalizado
 
-- ```Parte Obligatoria: 100 %```   
-- ```Parte Bonus: 15 %```   
-- ```TOTAL: 115 %```
+- ```RESULTADO: 115%```

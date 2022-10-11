@@ -10,7 +10,7 @@ las permitidas por cada proyecto.
 ### ESTADO
 #### Finalizado
 
-- ```RESULTADO: 100 %```
+- ```RESULTADO: 100%```
 
 #### FUNCIONES AÑADIDAS
 - isalpha

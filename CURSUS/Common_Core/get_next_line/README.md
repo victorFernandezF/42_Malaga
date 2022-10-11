@@ -6,4 +6,5 @@ una línea leída de un file descriptor.
 
 ### ESTADO
 
-```En proceso```
+- Sin empezar aun.
+<!-- ```En proceso``` -->
