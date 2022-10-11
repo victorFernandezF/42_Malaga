@@ -7,7 +7,14 @@ Crearás tu primera máquina en VirtualBox (o UTM si no puedes utilizar VirtualB
 bajo instrucciones específicas. Por lo tanto, al final del proyecto, serás capaz de configurar
 tu propio sistema operativo utilizando reglas estrictas.
 
+#### Summary
+
 ### ESTADO
 #### Finalizado
 
 - ```RESULTADO: 115%```
+
+### STATUS
+#### Finished
+
+- ```RESULT: 115%```
