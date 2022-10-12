@@ -21,4 +21,4 @@ be allowed to use your ft_printf in all your future projects.
 
 ### STATUS
 #### Finished
-![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-100%25-green)
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-100%25-green)
