@@ -20,4 +20,4 @@ ending with a newline, read from a file descriptor.
 ### STATUS
 #### not started
 
-![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-NO_EMPEZADO-inactive)
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-NOT_STARTED-inactive)
