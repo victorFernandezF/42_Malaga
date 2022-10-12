@@ -28,7 +28,7 @@ with your own. Take the time to expand your libft throughout the year.
 ### STATUS
 #### Finished
 
-![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-100%25-green)
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-100%25-green)
 
 <hr/>
 
