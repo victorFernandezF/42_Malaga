@@ -10,7 +10,7 @@ tu propio sistema operativo utilizando reglas estrictas.
 ### ESTADO
 #### Finalizado
 
-- ```RESULTADO: 115%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-115%25-green)
 
 <hr/>
 
@@ -21,4 +21,4 @@ Virtual Machine.
 ### STATUS
 #### Finished
 
-- ```RESULT: 115%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-115%25-green)
