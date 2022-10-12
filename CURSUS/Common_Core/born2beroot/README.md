@@ -1,4 +1,4 @@
-# :computer: BORN2BEROOT [SP]
+# :computer: BORN2BEROOT [:es:]
 
 #### Resumen
 
@@ -14,7 +14,7 @@ tu propio sistema operativo utilizando reglas estrictas.
 
 <hr/>
 
-# :computer: BORN2BEROOT [EN]
+# :computer: BORN2BEROOT [:gb:]
 #### Summary
 Virtual Machine.
 
