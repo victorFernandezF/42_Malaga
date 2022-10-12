@@ -1,4 +1,4 @@
-# :fax: FT_PRINTF [SP]
+# :fax: FT_PRINTF [:es:]
 
 #### Resumen
 El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf().
@@ -10,7 +10,7 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 
 <hr/>
 
-# :fax: FT_PRINTF [EN]
+# :fax: FT_PRINTF [:gb:]
 
 #### Summary
 By now, you must be fed up alternating the ft_putstr and ft_putnbr
