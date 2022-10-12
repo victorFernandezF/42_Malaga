@@ -7,8 +7,7 @@ una línea leída de un file descriptor.
 ### ESTADO
 #### Sin empezar aun
 
-- RESULTADO: no empezado
-<!-- ```En proceso``` -->
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-NO_EMPEZADO-inactive)
 
 <hr/>
 
@@ -21,5 +20,4 @@ ending with a newline, read from a file descriptor.
 ### STATUS
 #### not started
 
-- RESULT: not started
-<!-- ```En proceso``` -->
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-NO_EMPEZADO-inactive)
