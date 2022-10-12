@@ -1,4 +1,4 @@
-# :books: LIBFT [SP]
+# :books: LIBFT [:es:]
 [result]:100%
 ##### Resumen
 Programar en C puede ser aburrido cuando uno no tiene acceso a las funciones comunes más utilizadas. Este proyecto te permitirá entender la forma en la que estas funciones
@@ -15,7 +15,7 @@ las permitidas por cada proyecto.
 
 <hr/>
 
-# :books: LIBFT [EN]
+# :books: LIBFT [:gb:]
 #### Summary  
 C programming can be very tedious when one doesn’t have access to those highly useful
 standard functions. This project makes you to take the time to re-write those functions,
