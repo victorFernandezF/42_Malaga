@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/11 19:30:26 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/13 10:59:44 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	ft_put_bin(unsigned int num); //Print int to binary
 void	ft_put_oct(unsigned int num); //Print int to octal
 void	ft_put_hexa(unsigned int num);//Print int to Hexadecomal
+char	*ft_str_rev(char *str); //print a string but reversal ex(hello -> olleh)
 
 //ft_pritnf
 int		ft_printf(char const *input, ...); //Something like prinf

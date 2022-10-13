@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_bin.c                                       :+:      :+:    :+:   */
+/*   ft_str_rev.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/11 19:29:01 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 10:40:16 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/13 10:40:36 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/13 11:00:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_put_bin(unsigned int num)
+char	*ft_str_rev(char *str)
 {
-	int	i;
+	char	*rev;
+	int		len;
+	int		i;
 
 	i = 0;
-	if (num >= 2)
+	len = ft_strlen(str) -1;
+	rev = (char *)malloc(sizeof(char) * (len + 1));
+	if (!rev)
+		return (NULL);
+	while (len >= 0)
 	{
-		ft_put_bin(num / 2);
-		ft_put_bin(num % 2);
+		rev[i] = str[len];
+		len--;
+		i++;
 	}
-	else
-	{
-		ft_putchar_fd(num + 48, 1);
-	}
+	rev[i] = '\0';
+	return (rev);
 }
