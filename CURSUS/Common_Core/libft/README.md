@@ -35,40 +35,40 @@ with your own. Take the time to expand your libft throughout the year.
 ### FUNCTIONS
 ```BASIC FUNCTIONS```
 
-- isalpha - *Return 1 if argument is alphabetical and 0 if not*
-- isdigit - *Return 1 if argument is digit and 0 if not*
-- isalnum - *Return 1 if argument is alphanumeric and 0 if not*
-- isascii - *Return 1 if argument is ascii and 0 if not*
-- isprint - *Return 1 if argument is printable and 0 if not*
-- strlen - *Return the number or characters of a string*
-- memset - *writes n bytes of 'c' in a string*
-- bzero - *Writes n zeroes (0) in a string*
-- memcpy - *copy n bytes from src to dest*
-- memmove - *same that copy but with overlap*
-- strlcpy - *copy some characters from src to dest*
-- strlcat- *concat some characters from src to dest*
-- toupper - **
-- tolower - **
-- strchr - **
-- strrchr - **
-- strncmp -  **
-- memchr - **
-- memcmp - **
-- strnstr - **
-- atoi - **
-- calloc - **
-- strdup - **
-- ft_substr - **
-- ft_strjoin - **
-- ft_strtrim - **
-- ft_split - **
-- ft_itoa - **
-- ft_srmapi - **
-- ft_striteri - **
-- ft_putchar_fd - **
-- ft_putstr_fd - **
-- ft_putndl_fd - **
-- ft_putnbr_fd - **
+- **isalpha** - *Return 1 if argument is alphabetical and 0 if not*
+- **isdigit** - *Return 1 if argument is digit and 0 if not*
+- **isalnum** - *Return 1 if argument is alphanumeric and 0 if not*
+- **isascii** - *Return 1 if argument is ascii and 0 if not*
+- **isprint** - *Return 1 if argument is printable and 0 if not*
+- **strlen** - *Return the number or characters of a string*
+- **memset** - *writes n bytes of 'c' in a string*
+- **bzero** - *Writes n zeroes (0) in a string*
+- **memcpy** - *copy n bytes from src to dest*
+- **memmove** - *same that copy but with overlap*
+- **strlcpy** - *copy some characters from src to dest*
+- **strlcat**- *concat some characters from src to dest*
+- **toupper** - *Convert a character to upppercase a -> A*
+- **tolower** - *Convert a character to lowercase A -> a *
+- **strchr** - *Locate thr first ocurrence of 'c' in str. Ret the string*
+- **strrchr** - *Locate thr last ocurrence of 'c' in str. Ret the string*
+- **strncmp** -  *Compare some chars from two str. Ret the diference*
+- **memchr** - **
+- **memcmp** - **
+- **strnstr** - **
+- **atoi** - *Convert a string to int (array to integer)*
+- **calloc** - *Allocate mem and fills whith zeroes the str*
+- **strdup** - *Allocate enought mem to make a cpy of str. Ret the copy*
+- **ft_substr** - *Return a string from another string*
+- **ft_strjoin** - *Concat two strings*
+- **ft_strtrim** - *Remove the "set" from str begin & end. Ret a new str*
+- **ft_split** - *Split a string by a separator. Ret an arrray with words*
+- **ft_itoa** - *Convert an int to String*
+- **ft_srmapi** - **
+- **ft_striteri** - **
+- **ft_putchar_fd** - *writes a char in a file director*
+- **ft_putstr_fd** - *writes a string in a file director*
+- **ft_putndl_fd** - *writes a string in a file director with new line*
+- **ft_putnbr_fd** - *writes an integer in a file director*
    
 ```BONUS```
 - ft_lstnew
@@ -82,10 +82,10 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_lstmap
 
 ```MORE FUNCTIONS```
-- ft_put_binary
-- ft_put_octal
-- ft_put_hexa
-- ft_str_rev
+- ft_put_binary - *write a number in binary base*
+- ft_put_octal - *write a number in octal base*
+- ft_put_hexa - *write a number in hexa base*
+- ft_str_rev - *Ret a string that is the reversal of the original str hello -> olleh*
 
 - ###### printf
 	- ft_printf
