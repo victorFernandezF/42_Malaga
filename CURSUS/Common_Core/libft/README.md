@@ -35,7 +35,7 @@ with your own. Take the time to expand your libft throughout the year.
 ### FUNCTIONS
 ```BASIC FUNCTIONS```
 
-- isalpha
+- isalpha - *Return 1 if argument is al[habetical and 0 if not*
 - isdigit
 - isalnum
 - isascii
