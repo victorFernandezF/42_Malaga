@@ -1,4 +1,4 @@
-# :books: LIBFT [SP]
+# :books: LIBFT [:es:]
 [result]:100%
 ##### Resumen
 Programar en C puede ser aburrido cuando uno no tiene acceso a las funciones comunes más utilizadas. Este proyecto te permitirá entender la forma en la que estas funciones
@@ -11,11 +11,11 @@ las permitidas por cada proyecto.
 ### ESTADO
 #### Finalizado
 
-- ```RESULTADO: 100%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-100%25-green)
 
 <hr/>
 
-# :books: LIBFT [EN]
+# :books: LIBFT [:gb:]
 #### Summary  
 C programming can be very tedious when one doesn’t have access to those highly useful
 standard functions. This project makes you to take the time to re-write those functions,
@@ -28,7 +28,7 @@ with your own. Take the time to expand your libft throughout the year.
 ### STATUS
 #### Finished
 
-- ```RESULT: 100%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-100%25-green)
 
 <hr/>
 

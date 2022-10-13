@@ -1,4 +1,4 @@
-# :fax: FT_PRINTF [SP]
+# :fax: FT_PRINTF [:es:]
 
 #### Resumen
 El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf().
@@ -6,11 +6,11 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 
 ### ESTADO
 #### Finalizado
-- ``` RESULTADO: 100%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-100%25-green)
 
 <hr/>
 
-# :fax: FT_PRINTF [EN]
+# :fax: FT_PRINTF [:gb:]
 
 #### Summary
 By now, you must be fed up alternating the ft_putstr and ft_putnbr
@@ -21,4 +21,4 @@ be allowed to use your ft_printf in all your future projects.
 
 ### STATUS
 #### Finished
-- ``` RESULT: 100%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-100%25-green)

@@ -1,4 +1,4 @@
-# :page_facing_up: GET_NEXT_LINE [SP]
+# :page_facing_up: GET_NEXT_LINE [:es:]
 
 #### Resumen
 El objetivo de este proyecto es simple: programar una función que devuelva
@@ -7,12 +7,11 @@ una línea leída de un file descriptor.
 ### ESTADO
 #### Sin empezar aun
 
-- RESULTADO: no empezado
-<!-- ```En proceso``` -->
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-NO_EMPEZADO-inactive)
 
 <hr/>
 
-# :page_facing_up: GET_NEXT_LINE [EN]
+# :page_facing_up: GET_NEXT_LINE [:gb:]
 
 #### Summary
 The aim of this project is to make you code a function that returns a line
@@ -21,5 +20,4 @@ ending with a newline, read from a file descriptor.
 ### STATUS
 #### not started
 
-- RESULT: not started
-<!-- ```En proceso``` -->
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-NOT_STARTED-inactive)

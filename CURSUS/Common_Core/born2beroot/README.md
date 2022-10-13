@@ -1,4 +1,4 @@
-# :computer: BORN2BEROOT [SP]
+# :computer: BORN2BEROOT [:es:]
 
 #### Resumen
 
@@ -10,15 +10,15 @@ tu propio sistema operativo utilizando reglas estrictas.
 ### ESTADO
 #### Finalizado
 
-- ```RESULTADO: 115%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULTADO-115%25-green)
 
 <hr/>
 
-# :computer: BORN2BEROOT [EN]
+# :computer: BORN2BEROOT [:gb:]
 #### Summary
 Virtual Machine.
 
 ### STATUS
 #### Finished
 
-- ```RESULT: 115%```
+![GitHub code size in bytes](https://img.shields.io/badge/RESULT-115%25-green)
