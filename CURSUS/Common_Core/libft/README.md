@@ -35,40 +35,40 @@ with your own. Take the time to expand your libft throughout the year.
 ### FUNCTIONS
 ```BASIC FUNCTIONS```
 
-- isalpha - *Return 1 if argument is al[habetical and 0 if not*
-- isdigit
-- isalnum
-- isascii
-- isprint
-- strlen
-- memset
-- bzero
-- memcpy
-- memmove
-- strlcpy
-- strlcat
-- toupper
-- tolower
-- strchr
-- strrchr
-- strncmp
-- memchr
-- memcmp
-- strnstr
-- atoi
-- calloc
-- strdup
-- ft_substr
-- ft_strjoin
-- ft_strtrim
-- ft_split
-- ft_itoa
-- ft_srmapi
-- ft_striteri
-- ft_putchar_fd
-- ft_putstr_fd
-- ft_putndl_fd
-- ft_putnbr_fd.  
+- isalpha - *Return 1 if argument is alphabetical and 0 if not*
+- isdigit - *Return 1 if argument is digit and 0 if not*
+- isalnum - *Return 1 if argument is alphanumeric and 0 if not*
+- isascii - *Return 1 if argument is ascii and 0 if not*
+- isprint - *Return 1 if argument is printable and 0 if not*
+- strlen - *Return the number or characters of a string*
+- memset - *writes n bytes of 'c' in a string*
+- bzero - *Writes n zeroes (0) in a string*
+- memcpy - *copy n bytes from src to dest*
+- memmove - *same that copy but with overlap*
+- strlcpy - *copy some characters from src to dest*
+- strlcat- *concat some characters from src to dest*
+- toupper - **
+- tolower - **
+- strchr - **
+- strrchr - **
+- strncmp -  **
+- memchr - **
+- memcmp - **
+- strnstr - **
+- atoi - **
+- calloc - **
+- strdup - **
+- ft_substr - **
+- ft_strjoin - **
+- ft_strtrim - **
+- ft_split - **
+- ft_itoa - **
+- ft_srmapi - **
+- ft_striteri - **
+- ft_putchar_fd - **
+- ft_putstr_fd - **
+- ft_putndl_fd - **
+- ft_putnbr_fd - **
    
 ```BONUS```
 - ft_lstnew
