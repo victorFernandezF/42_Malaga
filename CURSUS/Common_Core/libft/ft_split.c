@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:38:20 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/24 12:08:24 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:58:40 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ static char	*word(char *str, int start, int end)
 	char	*word;
 
 	i = 0;
-	word = malloc((end - start + 1) * sizeof(char));
+	word = (char *)malloc((end - start + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
 	while (start < end)
 	{
 		word[i++] = str[start++];

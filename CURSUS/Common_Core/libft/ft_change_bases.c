@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 10:07:22 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 13:11:15 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:29:42 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,17 @@ char	*ft_dec_to_hexa(int num)
 	return (hexa);
 }
 
-char	*ft_dec_to_oct(int num)
+int	ft_dec_to_oct(int num)
 {
 	char	*oct;
 	int		quotient;
 	int		j;
 	int		aux;
+	int		res;
 
 	oct = (char *)malloc(sizeof(char) * 100);
 	if (!oct)
-		return (NULL);
+		return (0);
 	quotient = num;
 	j = 0;
 	while (quotient != 0)
@@ -92,5 +93,7 @@ char	*ft_dec_to_oct(int num)
 		quotient = quotient / 8;
 	}
 	oct = ft_str_rev(oct);
-	return (oct);
+	res = ft_atoi(oct);
+	free(oct);
+	return (res);
 }

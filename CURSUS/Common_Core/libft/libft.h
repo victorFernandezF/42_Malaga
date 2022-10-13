@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 10:59:44 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:29:08 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,10 @@ void	ft_put_bin(unsigned int num); //Print int to binary
 void	ft_put_oct(unsigned int num); //Print int to octal
 void	ft_put_hexa(unsigned int num);//Print int to Hexadecomal
 char	*ft_str_rev(char *str); //print a string but reversal ex(hello -> olleh)
+int		ft_bin_to_dec(int num); //Return a binary number in decimal base
+int		ft_dec_to_bin(int num); //Return a decimal number in binary base
+int		ft_dec_to_oct(int num); //Return a decimal number in octal base
+char	*ft_dec_to_hexa(int num); //Return a decimal number in hexa base
 
 //ft_pritnf
 int		ft_printf(char const *input, ...); //Something like prinf
