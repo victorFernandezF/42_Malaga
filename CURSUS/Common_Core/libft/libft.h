@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 13:29:08 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/13 18:10:34 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/* ADDED */
+/* MORE FUNCTIONS ADDED */
 void	ft_put_bin(unsigned int num); //Print int to binary
 void	ft_put_oct(unsigned int num); //Print int to octal
 void	ft_put_hexa(unsigned int num);//Print int to Hexadecomal
@@ -83,7 +83,7 @@ int		ft_dec_to_bin(int num); //Return a decimal number in binary base
 int		ft_dec_to_oct(int num); //Return a decimal number in octal base
 char	*ft_dec_to_hexa(int num); //Return a decimal number in hexa base
 
-//ft_pritnf
+//ft_pritnf and its stuff
 int		ft_printf(char const *input, ...); //Something like prinf
 int		ft_print_char(int c); //Print a char and return the num of chars printed
 int		ft_print_unsigned(unsigned int n); //print an unsigned int (ret)

@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:13:11 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/03 18:30:13 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/14 10:44:06 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	add_numbers(int n, ...) //variadic function to sum numbers
 	return (sum);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	printf(" 1 + 2 + 1 = %d ", add_numbers(3, 1, 2, 'a'));
 	return (0);
-}
+} */
