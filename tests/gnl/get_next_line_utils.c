@@ -6,11 +6,37 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/14 13:42:44 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/15 11:00:47 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static void	*ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*str;
+
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		str[i] = '\0';
+		i++;
+	}
+	return (str);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*res;
+
+	res = (char *)malloc(size * count);
+	if (!res)
+		return (NULL);
+	ft_bzero(res, size * count);
+	return (res);
+}
 
 size_t	ft_strlen(char *s)
 {
@@ -27,45 +53,40 @@ size_t	ft_strlen(char *s)
 char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*join;
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
+	int		size;
 
-	if (!s1)
-	{
-		s1 = (char *)malloc(sizeof(char) * 1);
-		s1[0] = '\0';
-	}
-	if (!s1 || !s2)
-		return (0);
-	join = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!join)
+	i = 0;
+	size = ft_strlen(s1) + ft_strlen(s2);
+	join = (char *)malloc((size + 1) * sizeof(char));
+	if (!join || !s1 || !s2)
 		return (NULL);
-	i = -1;
+	while (s1[i])
+	{
+		join[i] = s1[i];
+		i++;
+	}
 	j = 0;
-	if (s1)
-		while (s1[i++])
-			join[i] = s1[i];
 	while (s2[j])
-		join[i++] = s1[j++];
-	join[ft_strlen(s1) + ft_strlen(s2)] = '\0';
-	free (s1);
+	{
+		join[i] = s2[j];
+		i++;
+		j++;
+	}
+	join[size] = 0;
 	return (join);
 }
 
 char	*ft_strchr(char *s, int c)
 {
-	unsigned int	i;
+	char	*str;
 
-	i = 0;
-	if (!s)
-		return (0);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i])
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	return (NULL);
+	str = (char *)s;
+	while (*str != c && *str != 0)
+		str++;
+	if (*str == c)
+		return (str);
+	else
+		return (NULL);
 }

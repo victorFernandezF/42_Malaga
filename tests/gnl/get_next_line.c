@@ -6,113 +6,111 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/14 13:20:09 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/15 11:42:42 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_save(char *str)
+char	*ft_free(char *buffer, char *buff)
+{
+	char	*aux;
+
+	aux = ft_strjoin(buffer, buff);
+	free(buffer);
+	return (aux);
+}
+
+char	*get_save(char *save)
 {
 	int		i;
 	int		j;
-	char	*s;
+	char	*line;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (save[i] && save[i] != '\n')
 		i++;
-	if (!str[i])
+	if (!save[i])
 	{
-		free(str);
+		free(save);
 		return (NULL);
 	}
-	s = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 1);
-	if (!s)
-		return (NULL);
+	line = ft_calloc(sizeof(char), ft_strlen(save) - i + 1);
 	i++;
 	j = 0;
-	while (str[i])
-		s[j++] = str[i++];
-	s[j] = '\0';
-	free(str);
-	return (s);
+	while (save[i])
+		line[j++] = save[i++];
+	line[j] = '\0';
+	free(save);
+	return (line);
 }
 
-char	*get_line(char *str)
+char	*get_line(char *save)
 {
 	int		i;
-	char	*s;
+	char	*line;
 
 	i = 0;
-	if (!str[i])
+	if (!save[i])
 		return (NULL);
-	while (str[i] && str[i] != '\n')
+	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2));
-	if (!s)
-		return (NULL);
+	line = ft_calloc(sizeof(char), (i + 2));
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (save[i] && save[i] != '\n')
 	{
-		s[i] = str[i];
+		line[i] = save[i];
 		i++;
 	}
-	if (str[i] == '\n')
+	if (save[i] && save[i] != '\n')
 	{
-		s[i] = str[i];
-		i++;
+		line[i + 1] = '\n';
 	}
-	s[i] = '\0';
-	return (s);
+	return (line);
 }
 
-char	*ft_read(int fd, char *str)
+char	*ft_read(int fd, char *save)
 {
-	char		*buff;
+	char		*buffer;
 	int			read_bytes;
 
+	if (!save)
+		save = ft_calloc(1, 1);
+	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	read_bytes = 1;
-	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (0);
-	while ((read_bytes != 0) && (!ft_strchr(str, '\n')))
+	while (read_bytes != 0)
 	{
-		read_bytes = read(fd, buff, BUFFER_SIZE);
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
-			free(buff);
-			return (0);
+			free(buffer);
+			return (NULL);
 		}
-		buff[read_bytes] = '\0';
-		str = ft_strjoin(str, buff);
+		buffer[read_bytes] = 0;
+		save = ft_free(save, buffer);
+		if (ft_strchr(buffer, '\n'))
+			break ;
 	}
-	free(buff);
-	return (str);
+	free(buffer);
+	return (save);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*save;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	str = ft_read(fd, str);
-	if (!str)
+	save = ft_read(fd, save);
+	if (!save)
 		return (NULL);
-	line = get_line(str);
-	str = get_save(str);
+	line = get_line(save);
+	save = get_save(save);
+	if (!line)
+	{
+		free(line);
+		return (NULL);
+	}
 	return (line);
 }
-
-/* int	main(void)
-{
-	int	fd;
-
-	fd = open("texto.txt", O_RDONLY);
-	if (fd == -1)
-		return (-1);
-	close(fd);
-	get_next_line(fd);
-	return (0);
-} */
