@@ -14,7 +14,7 @@
 	- ft_strlen
 	- ft_calloc -> this function use ft_bzeros() which is static.
 - get_next_line.h - *contains the headers of the functions used*
-	- all the necessary *'#'includes*
+	- all the necessary * #includes*
 	- the following code controls what to do if you compile the program 
 	without a *BUFFER_SIZE*
 ```
@@ -22,7 +22,7 @@
 		# define BUFFER_SIZE BUFSIZ
 		#endif
 ```
-	if Buffer_size is undefined, the program gets the default size for the buffer_size. 
+if Buffer_size is undefined, the program gets the default size for the buffer_size. 
 ### FUNCTIONS USED
 - get_next_line - *the function that will be called from main*
 - 
