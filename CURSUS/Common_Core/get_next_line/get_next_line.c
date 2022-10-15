@@ -5,103 +5,111 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 12:54:01 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 18:34:56 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/15 12:07:49 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_get_line(char *str)
+char	*ft_free(char *buffer, char *buff)
 {
-	int		i;
-	char	*s;
+	char	*aux;
 
-	i = 0;
-	if (!str[i])
-		return (NULL);
-	while (str[i])
-		i++;
-	s = (char *)malloc(sizeof(char) * i + 2);
-	if (!s)
-		return (NULL);
-	i = 0;
-	while (str[i])
-	{
-		s[i] = str[i];
-		i++;
-	}
-	if (str[i] == '\n')
-	{
-		s[i] = str[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	aux = ft_strjoin(buffer, buff);
+	free(buffer);
+	return (aux);
 }
 
-char	*ft_save(char *str)
+char	*get_save(char *save)
 {
 	int		i;
 	int		j;
-	char	*s;
+	char	*line;
 
 	i = 0;
-	while (str[i])
+	while (save[i] && save[i] != '\n')
 		i++;
-	if (!str[i])
+	if (!save[i])
 	{
-		free(str);
+		free(save);
 		return (NULL);
 	}
-	s = (char *)malloc(sizeof(char) * ft_strlen(str) - i + 1);
-	if (!s)
-		return (NULL);
+	line = ft_calloc((ft_strlen(save) - i + 1), sizeof(char));
 	i++;
 	j = 0;
-	while (str[i])
-		s[j++] = str[i++];
-	s[j] = '\0';
-	free(str);
-	return (s);
+	while (save[i])
+		line[j++] = save[i++];
+	free(save);
+	return (line);
 }
 
-char	*ft_read(int fd, char *str)
+char	*get_line(char *save)
 {
-	char	*new;
-	int		read_b;
+	int		i;
+	char	*line;
 
-	new = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	if (!new)
+	i = 0;
+	if (!save[i])
 		return (NULL);
-	read_b = 1;
-	while (!ft_strchr(str, '\n') && (read_b != 0))
+	while (save[i] && save[i] != '\n')
+		i++;
+	line = ft_calloc(i + 2, sizeof(char));
+	i = 0;
+	while (save[i] && save[i] != '\n')
 	{
-		read_b = read(fd, new, BUFFER_SIZE);
+		line[i] = save[i];
+		i++;
 	}
-	if (read_b == -1)
+	if (save[i] && save[i] == '\n')
 	{
-		free(new);
-		return (NULL);
+		line[i++] = '\n';
 	}
-	new[read_b] = '\0';
-	str = ft_strjoin(str, new);
-	free (new);
-	return (str);
+	return (line);
+}
+
+char	*ft_read(int fd, char *save)
+{
+	char		*buffer;
+	int			read_bytes;
+
+	if (!save)
+		save = ft_calloc(1, 1);
+	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
+	read_bytes = 1;
+	while (read_bytes > 0)
+	{
+		read_bytes = read(fd, buffer, BUFFER_SIZE);
+		if (read_bytes == -1)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[read_bytes] = 0;
+		save = ft_free(save, buffer);
+		if (ft_strchr(buffer, '\n'))
+			break ;
+	}
+	free(buffer);
+	return (save);
 }
 
 char	*get_next_line(int fd)
 {
-	char	*line;
-	char	*str;
+	static char	*save;
+	char		*line;
 
-	if (fd <= 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	str = ft_read(fd, str);
-	printf("%s", str);
-	if (!str)
+	save = ft_read(fd, save);
+	if (!save)
 		return (NULL);
-	line = ft_get_line(str);
-	str = ft_save(str);
+	line = get_line(save);
+	save = get_save(save);
+	if (!line)
+	{
+		free(line);
+		return (NULL);
+	}
 	return (line);
 }
