@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:55:26 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/15 11:51:25 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/15 13:35:45 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <sys/stat.h>
-# include <sys/types.h>
-# include <sys/uio.h>
-# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE BUFSIZ
