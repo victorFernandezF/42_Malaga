@@ -18,9 +18,9 @@
 	- the following code controls what to do if you compile the program 
 	without a *BUFFER_SIZE*
 ```
-		ifndef BUFFER_SIZE
-		define BUFFER_SIZE BUFSIZ
-		endif
+		#ifndef BUFFER_SIZE
+		# define BUFFER_SIZE BUFSIZ
+		#endif
 ```
 	if Buffer_size is undefined, the program gets the default size for the buffer_size. 
 ### FUNCTIONS USED
