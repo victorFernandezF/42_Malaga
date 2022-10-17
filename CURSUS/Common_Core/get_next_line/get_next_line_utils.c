@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/15 11:00:47 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/17 18:58:29 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,3 +90,4 @@ char	*ft_strchr(char *s, int c)
 	else
 		return (NULL);
 }
+
