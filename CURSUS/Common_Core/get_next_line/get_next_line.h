@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:55:26 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/15 13:35:45 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/17 11:01:38 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-# include <sys/stat.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE BUFSIZ
@@ -26,6 +24,7 @@ char	*get_next_line(int fd);
 char	*ft_read(int fd, char *str);
 char	*get_line(char *str);
 char	*get_save(char *str);
+char	*ft_join_free(char *buffer, char *buff);
 
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *s);

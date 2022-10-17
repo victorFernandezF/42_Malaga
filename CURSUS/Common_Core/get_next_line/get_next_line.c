@@ -6,13 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/15 12:07:49 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/17 10:10:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_free(char *buffer, char *buff)
+char	*ft_join_free(char *buffer, char *buff)
 {
 	char	*aux;
 
@@ -83,10 +83,11 @@ char	*ft_read(int fd, char *save)
 		if (read_bytes == -1)
 		{
 			free(buffer);
+			free(save);
 			return (NULL);
 		}
 		buffer[read_bytes] = 0;
-		save = ft_free(save, buffer);
+		save = ft_join_free(save, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
