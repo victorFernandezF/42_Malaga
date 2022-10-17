@@ -40,9 +40,12 @@ if Buffer_size is undefined, the program gets the default size for the buffer_si
 - **ft_free** - *join and free*
 
 - **get_line** - *gets the line we want to return*
+```
+	When '\n' is found but the Buffer_size is not over yet This function takes the current line.
+```
 - **get_line** - *gets the rest of the line.*   
 ```
-	When '\n' is found but the Buffer_size is not over yet. Program takes the current line
+	When '\n' is found but the Buffer_size is not over yet the function takes the current line
 	but we need to keep the rest of the line until buffer_size, to use it in case we call the
 	function get_next_line more than once (in a loop for example).
 	
