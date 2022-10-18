@@ -6,35 +6,29 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 11:12:54 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/17 19:25:35 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/18 10:17:08 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static void	*ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-	char	*str;
-
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	return (str);
-}
-
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*res;
+	void			*res;
+	unsigned char	*str;
+	size_t			total;
 
-	res = (char *)malloc(size * count);
+	total = size * count;
+	res = (char *)malloc(sizeof(char) * total);
 	if (!res)
 		return (NULL);
-	ft_bzero(res, size * count);
+	str = (unsigned char *)res;
+	while (total != 0)
+	{
+		*str = '\0';
+		str++;
+		total--;
+	}
 	return (res);
 }
 
