@@ -20,7 +20,9 @@ be allowed to use your ft_printf in all your future projects.
 ## FUNCTIONS
 ### ft_printf.c
 - ft_printf -> *the function wich is called from main*   
->If the string passed has not '%' print it. Else call to ft_eval format and pass the following character to be evaluated.
+>If the string passed has not '%' print it. Else call to ft_eval_format and pass the following character to be evaluated.
+>- Example 1: *in **ft_printf("Hello World")** there are not '%' so it will print "Hello World"*.
+>- Example 2: *in **ft_printf("number %d", var_number)** there are a '%' so it will call to ft_eval_format passing the char 'd' and the variables to print.*
 
 - ft_eval_format -> *A function than evaluate the formar of the string*
 >Evaluate the character passed by ft_printf and call to the function needed in each case. Example: 'if char is "c" it means we want to print a character so it will call to ft_print_char'
