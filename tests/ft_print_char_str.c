@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:29:14 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 18:07:08 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:41:04 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ int	ft_print_string(char *s)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_print_int(int n)
+{
+	int		ret;
+	char	*num;
+
+	ret = 0;
+	num = ft_itoa(n);
+	ret += ft_print_string(num);
+	free (num);
+	return (ret);
 }
