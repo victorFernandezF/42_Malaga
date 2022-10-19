@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 12:15:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 13:11:16 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:20:46 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/* Return the lenght of the unsigned number passed by arg */
 static int	ft_unsigned_len(unsigned int n)
 {
 	int	len;
@@ -25,6 +26,8 @@ static int	ft_unsigned_len(unsigned int n)
 	return (len);
 }
 
+/* Like itoa but whith unsigned int.
+It takes and convert it to string */
 char	*ft_unsigned_itoa(unsigned int n)
 {
 	char	*num;
@@ -44,6 +47,8 @@ char	*ft_unsigned_itoa(unsigned int n)
 	return (num);
 }
 
+/* Print the unsigned int and return the number
+of chars printed */
 int	ft_print_unsigned(unsigned int n)
 {
 	int		ret;

@@ -6,12 +6,14 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:44:34 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 10:41:17 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:25:48 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/* Check the format passed by arg and depending on it
+it calls the correct functions in each case */
 int	ft_eval_format(va_list args, const char format)
 {
 	int	ret;
@@ -34,6 +36,9 @@ int	ft_eval_format(va_list args, const char format)
 	return (ret);
 }
 
+/* Take the args (va_start). Check the format and call to
+function that evaluate the format or print the line in case
+no format found */
 int	ft_printf(char const *input, ...)
 {
 	va_list	args;

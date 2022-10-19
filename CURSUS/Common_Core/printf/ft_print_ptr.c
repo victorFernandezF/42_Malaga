@@ -6,12 +6,13 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:36:17 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/10 18:06:39 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:12:51 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/* Return the lenght of the ptr */
 static int	ft_ptr_len(uintptr_t ptr)
 {
 	int	len;
@@ -25,6 +26,7 @@ static int	ft_ptr_len(uintptr_t ptr)
 	return (len);
 }
 
+/* Print the ptr passed by argument in hexadecimal base */
 static void	ft_put_ptr(uintptr_t ptr)
 {
 	if (ptr >= 16)
@@ -41,6 +43,8 @@ static void	ft_put_ptr(uintptr_t ptr)
 	}
 }
 
+/*  Checks if pointer is 0 and if not calls the functions
+ to print the pointer in hexadecimal */
 int	ft_print_ptr(unsigned long long ptr)
 {
 	int	ret;
