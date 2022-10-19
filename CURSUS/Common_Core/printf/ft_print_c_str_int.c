@@ -6,18 +6,20 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:29:14 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/19 11:41:42 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/19 18:35:21 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/* Print a char and return the number of things printed*/
 int	ft_print_char(int c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
+/* Print a string and return the number of characters printed */
 int	ft_print_string(char *s)
 {
 	int	i;
@@ -37,6 +39,7 @@ int	ft_print_string(char *s)
 	return (i);
 }
 
+/* Print a number and return the number of digits printed */
 int	ft_print_int(int n)
 {
 	int		ret;
