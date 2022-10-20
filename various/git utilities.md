@@ -21,4 +21,14 @@
 - Delete an alias
 	- git config --global --unset alias.<you_alias_name>
 
+### BRANCH
+- git checkout <branch_name>: Switch to another branch.
+- git branch <new_branchname>: create a new branch.
+- git checkout <branch_name>: switch to an existing branch.
+- git branch -d <branch_name>: Delete an existing branch. (secure)
+- git branch -D <branch_name>: Delete an existing branch.
+- git branch -m <branch_name>: Rename the actual branch.
+- git branch -a <branch_name>: Enumerate the remote branches.
+- git branch --list: see the branchs.
+
 To be continued...
