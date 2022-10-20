@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 11:50:09 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/19 11:39:16 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:01:01 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,4 @@ int	main(void)
 	printf("	printf real: %s\n", s);
 	ft_printf("	printf mio : %s\n", s);
 	return (0);
-} */
+} */ 
