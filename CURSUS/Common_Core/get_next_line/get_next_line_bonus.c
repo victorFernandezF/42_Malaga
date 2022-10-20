@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 13:45:55 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/18 18:04:41 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/20 19:13:55 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	*get_save(char *save)
 	return (line);
 }
 
-char	*get_line(char *save)
+char	*get_current_line(char *save)
 {
 	int		i;
 	char	*line;
@@ -104,7 +104,7 @@ char	*get_next_line(int fd)
 	save[fd] = ft_read(fd, save[fd]);
 	if (!save[fd])
 		return (NULL);
-	line = get_line(save[fd]);
+	line = get_current_line(save[fd]);
 	save[fd] = get_save(save[fd]);
 	if (!line)
 	{
