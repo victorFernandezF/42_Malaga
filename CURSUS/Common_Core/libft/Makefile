@@ -6,12 +6,12 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/20 11:17:04 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/20 11:54:48 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-	CC=cc
+CC=cc
 NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror
 OPTIONS=-c -I.
