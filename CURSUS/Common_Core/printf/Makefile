@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/04 11:35:46 by victofer          #+#    #+#              #
-#    Updated: 2022/10/20 11:02:53 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/20 12:13:44 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -crs $(NAME) $(OBJ)
-	@echo "$(GREEN)$@ compiled succesfully.$(END)"
+	@echo "$(GREEN)⦿ $@ compiled succesfully. ☺$(END)"
 	
 $(OBJ): $(SRC)
 	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
@@ -38,7 +38,7 @@ $(OBJ): $(SRC)
 
 clean:
 	rm -f $(OBJ)
-	@echo "$(MAGENTA)Everything cleaned.$(MAGENTA)"
+	@echo "$(MAGENTA)⦿ Everything cleaned.$(MAGENTA)"
 	
 fclean: clean
 	rm -f $(NAME)

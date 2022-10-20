@@ -6,12 +6,12 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/20 11:54:48 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/20 12:38:52 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CC=cc
+CC=gcc
 NAME=libft.a
 CFLAGS=-Wall -Wextra -Werror
 OPTIONS=-c -I.
@@ -40,22 +40,26 @@ END=\033[0m
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -crs $(NAME) $(OBJ)
-	@echo "$(GREEN)$@ Compiled successfully $(END)"
+	ar rcs $(NAME) $(OBJ)
+	@echo "$(GREEN)⦿ $@ Compiled successfully ☺$(END)"
 
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
-	@echo "$(GREEN)$@ Compiled successfully $(END)"
+	@echo "$(GREEN)⦿ $@ Compiled successfully ☺$(END)"
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
-	@echo "$(MAGENTA)Everything cleaned $(END)"
+	@echo "$(MAGENTA)⦿ Everything cleaned $(END)"
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all	
+
+every: all bonus
+
+revery: fclean all bonus
 
 .SILENT: $(OBJS)
 .PHONY: clean fclean all re bonus
