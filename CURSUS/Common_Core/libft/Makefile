@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/19 10:34:49 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/20 11:17:04 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,22 +29,33 @@ BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJ =$(BONUS:.c=.o) 
 
+# - COLOURS - 
+GREEN=\033[0;32m
+RED=\033[0;31m
+BLUE=\033[0;34m
+YELLOW = \033[0;93m
+MAGENTA = \033[0;95m
+END=\033[0m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar -crs $(NAME) $(OBJ)
+	@echo "$(GREEN)$@ Compiled successfully $(END)"
 
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	@echo "$(GREEN)$@ Compiled successfully $(END)"
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
+	@echo "$(MAGENTA)Everything cleaned $(END)"
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all	
 
-
+.SILENT: $(OBJS)
 .PHONY: clean fclean all re bonus
