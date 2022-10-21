@@ -31,4 +31,5 @@
 - git branch -a <branch_name>: Enumerate the remote branches.
 - git branch --list: see the branchs.
 
-To be continued...
+
+*To be continued...*
