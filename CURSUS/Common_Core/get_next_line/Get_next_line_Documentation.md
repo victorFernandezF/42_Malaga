@@ -49,3 +49,35 @@ if Buffer_size is undefined, the program gets the default size for the buffer_si
 The bonus part consist in:
 	- using only one static var and.
 	- Get_next_line must be able of manage variosu fd 
+
+gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c get_next_line.h main.c -D BUFFER_SIZE=42 -g -fsanitize=address
+
+bonus
+
+#include "get_next_line_bonus.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int	main(void)
+{
+	int		fd;
+	int		fd2;
+	char	*line;
+
+	fd = open("texto.txt", O_RDONLY);
+	fd2 = open("texto2.txt", O_RDONLY);
+	while (1)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+		line = get_next_line(fd2);
+		printf("%s", line);
+		if (line == NULL)
+			break ;
+		line++;
+	}
+	return (0);
+}
+
+
