@@ -1,6 +1,5 @@
 .DS_Store
 .*
-main.c
 *.o
 *.txt
 test.*

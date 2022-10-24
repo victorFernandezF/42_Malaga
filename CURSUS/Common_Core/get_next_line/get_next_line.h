@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 10:55:26 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/20 18:57:46 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:39:07 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *str);
 char	*get_line(char *str);
-char	*get_save(char *str);
+char	*save_rest(char *str);
 char	*ft_join_free(char *buffer, char *buff);
 
 char	*ft_strjoin(char *s1, char *s2);

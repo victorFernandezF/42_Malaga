@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/24 11:34:24 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/24 12:43:41 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_join_free(char *buffer, char *buff)
 	return (aux);
 }
 
-char	*get_rest(char *rest)
+char	*save_rest(char *rest)
 {
 	int		i;
 	int		j;
@@ -68,13 +68,13 @@ char	*get_line(char *rest)
 	return (line);
 }
 
-char	*ft_read(int fd, char *rest)
+char	*ft_read(int fd, char *str)
 {
 	char		*buffer;
 	int			read_bytes;
 
-	if (!rest)
-		rest = ft_calloc(1, 1);
+	if (!str)
+		str = ft_calloc(1, 1);
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	read_bytes = 1;
 	while (read_bytes > 0)
@@ -83,16 +83,16 @@ char	*ft_read(int fd, char *rest)
 		if (read_bytes == -1)
 		{
 			free(buffer);
-			free(rest);
+			free(str);
 			return (NULL);
 		}
 		buffer[read_bytes] = '\0';
-		rest = ft_join_free(rest, buffer);
+		str = ft_join_free(str, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
 	free(buffer);
-	return (rest);
+	return (str);
 }
 
 char	*get_next_line(int fd)
@@ -106,7 +106,7 @@ char	*get_next_line(int fd)
 	if (!str)
 		return (NULL);
 	line = get_line(str);
-	str = get_rest(str);
+	str = save_rest(str);
 	if (!line)
 	{
 		free(line);
