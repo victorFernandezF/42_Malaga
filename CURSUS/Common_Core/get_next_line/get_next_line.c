@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/20 18:58:12 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/24 11:34:24 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,60 +21,60 @@ char	*ft_join_free(char *buffer, char *buff)
 	return (aux);
 }
 
-char	*get_save(char *save)
+char	*get_rest(char *rest)
 {
 	int		i;
 	int		j;
 	char	*line;
 
 	i = 0;
-	while (save[i] && save[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 		i++;
-	if (!save[i])
+	if (!rest[i])
 	{
-		free(save);
+		free(rest);
 		return (NULL);
 	}
-	line = ft_calloc((ft_strlen(save) - i + 1), sizeof(char));
+	line = ft_calloc((ft_strlen(rest) - i + 1), sizeof(char));
 	i++;
 	j = 0;
-	while (save[i])
-		line[j++] = save[i++];
-	free(save);
+	while (rest[i])
+		line[j++] = rest[i++];
+	free(rest);
 	return (line);
 }
 
-char	*get_line(char *save)
+char	*get_line(char *rest)
 {
 	int		i;
 	char	*line;
 
 	i = 0;
-	if (!save[i])
+	if (!rest[i])
 		return (NULL);
-	while (save[i] && save[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
 	i = 0;
-	while (save[i] && save[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 	{
-		line[i] = save[i];
+		line[i] = rest[i];
 		i++;
 	}
-	if (save[i] && save[i] == '\n')
+	if (rest[i] && rest[i] == '\n')
 	{
 		line[i++] = '\n';
 	}
 	return (line);
 }
 
-char	*ft_read(int fd, char *save)
+char	*ft_read(int fd, char *rest)
 {
 	char		*buffer;
 	int			read_bytes;
 
-	if (!save)
-		save = ft_calloc(1, 1);
+	if (!rest)
+		rest = ft_calloc(1, 1);
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	read_bytes = 1;
 	while (read_bytes > 0)
@@ -83,30 +83,30 @@ char	*ft_read(int fd, char *save)
 		if (read_bytes == -1)
 		{
 			free(buffer);
-			free(save);
+			free(rest);
 			return (NULL);
 		}
-		buffer[read_bytes] = 0;
-		save = ft_join_free(save, buffer);
+		buffer[read_bytes] = '\0';
+		rest = ft_join_free(rest, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}
 	free(buffer);
-	return (save);
+	return (rest);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*save;
+	static char	*str;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 		return (NULL);
-	save = ft_read(fd, save);
-	if (!save)
+	str = ft_read(fd, str);
+	if (!str)
 		return (NULL);
-	line = get_line(save);
-	save = get_save(save);
+	line = get_line(str);
+	str = get_rest(str);
 	if (!line)
 	{
 		free(line);

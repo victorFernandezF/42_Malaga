@@ -6,3 +6,4 @@ main.c
 test.*
 *.swp
 *.dSYM
+*.gch
