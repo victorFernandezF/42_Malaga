@@ -1,7 +1,6 @@
 .DS_Store
 .*
 *.o
-*.txt
 test.*
 *.swp
 *.dSYM
