@@ -5,7 +5,7 @@
 una línea leída de un file descriptor.
 
 ### ESTADO
-#### Sin empezar aun
+#### Finalizado
 
 ![result](https://img.shields.io/badge/RESULTADO-120%25-green)
 
@@ -18,6 +18,7 @@ una línea leída de un file descriptor.
 ending with a newline, read from a file descriptor.
 
 ### STATUS
-#### not started
+#### Finished
 
-![Result](https://img.shields.io/badge/RESULT-NOT_STARTED-inactive)
+![result](https://img.shields.io/badge/RESULT-120%25-green)
+<!-- ![Result](https://img.shields.io/badge/RESULT-NOT_STARTED-inactive) -->
