@@ -1,8 +1,19 @@
 # :fax: FT_PRINTF [:es:]
 
+#### Descripcion
+>Este proyecto va bastante al grano, tienes que programar la función printf. Aprenderás qué significa esto y cómo implementar funciones variádicas. Una vez que valides el proyecto, podrás utilizar esta función en tus futuros proyectos.
+
 #### Resumen
-El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf().
+>El objetivo de este proyecto es bastante sencillo. Deberás reprogramar printf().
 Aprenderás, principalmente, a utilizar un número variable de argumentos.
+
+### INFO
+
+|  Keywords   |      Skills     |
+|-------------|:---------------:|
+| Unix logic  |      Rigor      |
+|             | Algorithms & IA |
+|
 
 ### ESTADO
 #### Finalizado
@@ -12,8 +23,11 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 
 # :fax: FT_PRINTF [:gb:]
 
+#### description
+>This project is pretty straightforward, you have to recode printf. You will learn what is and how to implement variadic functions. Once you validate it, you will reuse this function in your future projects.
+
 #### Summary
-By now, you must be fed up alternating the ft_putstr and ft_putnbr
+>By now, you must be fed up alternating the ft_putstr and ft_putnbr
 functions when doing your printing. Are you not allowed to use printf? You can recode
 yours! It will be a chance for you to discover a feature of the C language – variadic
 functions – and to practice detailed management of the printing options. You will then
