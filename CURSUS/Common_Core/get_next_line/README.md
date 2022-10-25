@@ -13,7 +13,6 @@ una línea leída de un file descriptor.
 | Unix logic  |      Rigor      |
 |             |       Unix      |
 |             | Algorithms & IA |
-|
 
 ### ESTADO
 #### Finalizado
@@ -37,7 +36,6 @@ ending with a newline, read from a file descriptor.
 | Unix logic  |      Rigor      |
 |             |       Unix      |
 |             | Algorithms & IA |
-|
 
 ### STATUS
 #### Finished
