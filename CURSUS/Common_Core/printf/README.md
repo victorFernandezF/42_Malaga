@@ -13,7 +13,6 @@ Aprenderás, principalmente, a utilizar un número variable de argumentos.
 |-------------|:---------------:|
 | Unix logic  |      Rigor      |
 |             | Algorithms & IA |
-|
 
 ### ESTADO
 #### Finalizado
@@ -32,6 +31,13 @@ functions when doing your printing. Are you not allowed to use printf? You can r
 yours! It will be a chance for you to discover a feature of the C language – variadic
 functions – and to practice detailed management of the printing options. You will then
 be allowed to use your ft_printf in all your future projects.
+
+### INFO
+
+|  Keywords   |      Skills     |
+|-------------|:---------------:|
+| Unix logic  |      Rigor      |
+|             | Algorithms & IA |
 
 ### STATUS
 #### Finished
