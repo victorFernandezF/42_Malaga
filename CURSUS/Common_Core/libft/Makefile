@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/20 12:38:52 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/25 19:12:11 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,10 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_split.c ft_printf.c ft_print_c_str_int.c \
 	ft_print_unsigned.c ft_print_hexa.c ft_print_ptr.c \
-	ft_put_hexa.c ft_put_bin.c ft_put_oct.c ft_change_base.c ft_str_rev.c
-OBJ= $(SRC:.c=*.o)
+	ft_put_hexa.c ft_put_bin.c ft_put_oct.c ft_str_rev.c \
+	get_next_line.c get_next_line_utils.c get_next_line_bonus.c get_next_line_utils_bonus.c
+	
+OBJ= $(SRC:.c=.o)
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 BONUS_OBJ =$(BONUS:.c=.o) 

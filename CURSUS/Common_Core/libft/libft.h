@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/13 18:10:34 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/25 19:00:59 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 /*BONUS*/
 typedef struct s_list
@@ -92,4 +93,20 @@ int		ft_print_ptr(unsigned long long ptr); //print pointer of void ...
 int		ft_print_string(char *s); //print a string (return num chars printed)
 int		ft_print_int(int n); //print an int numbber (return num chars printed)
 int		ft_print_hexa(unsigned int num, char format);//print an int->hexa (ret)
+
+// get next line ans its stuff
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE BUFSIZ
+# endif
+
+char	*get_next_line(int fd);
+char	*ft_read(int fd, char *str);
+char	*get_line_gnl(char *str);
+char	*save_rest(char *str);
+char	*ft_join_free(char *buffer, char *buff);
+
+char	*ft_strjoin_gnl(char *s1, char *s2);
+size_t	ft_strlen_gnl(char *s);
+char	*ft_strchr_gnl(char *s, int c);
+void	*ft_calloc_gnl(size_t count, size_t size);
 #endif
