@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 13:45:55 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/24 12:11:25 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/14 12:30:36 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/25 10:18:17 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,47 +21,47 @@ char	*ft_join_free(char *buffer, char *buff)
 	return (aux);
 }
 
-char	*save_rest(char *str)
+char	*save_rest(char *rest)
 {
 	int		i;
 	int		j;
 	char	*line;
 
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 		i++;
-	if (!str[i])
+	if (!rest[i])
 	{
-		free(str);
+		free(rest);
 		return (NULL);
 	}
-	line = ft_calloc((ft_strlen(str) - i + 1), sizeof(char));
+	line = ft_calloc((ft_strlen(rest) - i + 1), sizeof(char));
 	i++;
 	j = 0;
-	while (str[i])
-		line[j++] = str[i++];
-	free(str);
+	while (rest[i])
+		line[j++] = rest[i++];
+	free(rest);
 	return (line);
 }
 
-char	*get_current_line(char *str)
+char	*get_line_gnl(char *rest)
 {
 	int		i;
 	char	*line;
 
 	i = 0;
-	if (!str[i])
+	if (!rest[i])
 		return (NULL);
-	while (str[i] && str[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 		i++;
 	line = ft_calloc(i + 2, sizeof(char));
 	i = 0;
-	while (str[i] && str[i] != '\n')
+	while (rest[i] && rest[i] != '\n')
 	{
-		line[i] = str[i];
+		line[i] = rest[i];
 		i++;
 	}
-	if (str[i] && str[i] == '\n')
+	if (rest[i] && rest[i] == '\n')
 	{
 		line[i++] = '\n';
 	}
@@ -83,9 +83,10 @@ char	*ft_read(int fd, char *str)
 		if (read_bytes == -1)
 		{
 			free(buffer);
+			free(str);
 			return (NULL);
 		}
-		buffer[read_bytes] = 0;
+		buffer[read_bytes] = '\0';
 		str = ft_join_free(str, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
@@ -99,12 +100,12 @@ char	*get_next_line(int fd)
 	static char	*str[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	str[fd] = ft_read(fd, str[fd]);
 	if (!str[fd])
 		return (NULL);
-	line = get_current_line(str[fd]);
+	line = get_line_gnl(str[fd]);
 	str[fd] = save_rest(str[fd]);
 	if (!line)
 	{

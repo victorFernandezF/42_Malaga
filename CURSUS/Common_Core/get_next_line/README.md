@@ -7,7 +7,7 @@ una línea leída de un file descriptor.
 ### ESTADO
 #### Sin empezar aun
 
-![Result](https://img.shields.io/badge/RESULTADO-NO_EMPEZADO-inactive)
+![result](https://img.shields.io/badge/RESULTADO-120%25-green)
 
 <hr/>
 

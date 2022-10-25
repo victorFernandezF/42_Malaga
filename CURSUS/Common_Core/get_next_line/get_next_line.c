@@ -44,7 +44,7 @@ char	*save_rest(char *rest)
 	return (line);
 }
 
-char	*get_line(char *rest)
+char	*get_line_gnl(char *rest)
 {
 	int		i;
 	char	*line;
@@ -100,12 +100,12 @@ char	*get_next_line(int fd)
 	static char	*str;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	str = ft_read(fd, str);
 	if (!str)
 		return (NULL);
-	line = get_line(str);
+	line = get_line_gnl(str);
 	str = save_rest(str);
 	if (!line)
 	{

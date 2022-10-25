@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 13:46:05 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/24 12:10:04 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/14 10:55:26 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/25 10:13:13 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
-# include <sys/stat.h>
-# include <sys/types.h>
-# include <sys/uio.h>
 # include <limits.h>
 
 # ifndef BUFFER_SIZE
@@ -27,9 +23,9 @@
 
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *str);
-char	*get_current_line(char *str);
-char	*ft_jon_free(char *buffer, char *buff);
+char	*get_line_gnl(char *str);
 char	*save_rest(char *str);
+char	*ft_join_free(char *buffer, char *buff);
 
 char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(char *s);

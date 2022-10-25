@@ -5,7 +5,7 @@
 - get_next_line.c - *Contains the functions:*
 	- get_next_line
 	- ft_read
-	- get_line
+	- get_line_gnl
 	- get_save
 	- ft_free
 - get_next_line_utils.c - *Contains other util functions*
@@ -37,10 +37,10 @@ if Buffer_size is undefined, the program gets the default size for the buffer_si
 
 - **ft_free** - *join and free*
 
-- **get_line** - *gets the line we want to return*
+- **get_line_gnl** - *gets the line we want to return*
 	>When '\n' is found but the Buffer_size is not over yet This function takes the current line.
 
-- **get_line** - *gets the rest of the line.*   
+- **save_rest** - *gets the rest of the line.*   
 	>When '\n' is found but the Buffer_size is not over yet the function takes the current line
 	but we need to keep the rest of the line until buffer_size, to use it in case we call the
 	function get_next_line more than once (in a loop for example).
@@ -50,10 +50,5 @@ The bonus part consist in:
 	- using only one static var and.
 	- Get_next_line must be able of manage variosu fd 
 
-gcc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c get_next_line.h main.c -D BUFFER_SIZE=42 -g -fsanitize=address
-
-bonus
-
-gcc -Wall -Wextra -Werror get_next_line_bonus.c get_next_line_utils_bonus.c get_next_line_bonus.h main_bonus.c -D BUFFER_SIZE=42 -g -fsanitize=addressD
 
 

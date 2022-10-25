@@ -22,7 +22,7 @@
 
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *str);
-char	*get_line(char *str);
+char	*get_line_gnl(char *str);
 char	*save_rest(char *str);
 char	*ft_join_free(char *buffer, char *buff);
 

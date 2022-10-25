@@ -5,38 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 13:46:42 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/18 18:53:22 by victofer         ###   ########.fr       */
+/*   Created: 2022/10/14 11:12:54 by victofer          #+#    #+#             */
+/*   Updated: 2022/10/25 10:11:25 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-static void	*ft_bzero(void *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = 0;
-		i++;
-	}
-	return (s);
-}
-
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*res;
-	int		total;
+	void			*res;
+	unsigned char	*str;
+	size_t			total;
 
 	total = size * count;
-	res = malloc(total);
-	if (res == NULL)
-		return (res);
-	ft_bzero(res, size * count);
+	res = (char *)malloc(sizeof(char) * total);
+	if (!res)
+		return (NULL);
+	str = (unsigned char *)res;
+	while (total != 0)
+	{
+		*str = '\0';
+		str++;
+		total--;
+	}
 	return (res);
 }
 
