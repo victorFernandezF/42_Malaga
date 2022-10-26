@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/26 18:29:45 by victofer         ###   ########.fr        #
+#    Updated: 2022/10/26 18:34:08 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ $(NAME): $(OBJ)
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUS_OBJ)
-	@echo "$(GREEN)⦿ $@ Compiled successfully ☺$(END)"
+	@echo "$(GREEN)⦿ $@ Bonus Compiled successfully ☺$(END)"
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
