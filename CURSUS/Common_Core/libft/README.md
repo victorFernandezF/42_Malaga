@@ -108,6 +108,7 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_put_octal - *write a number in octal base*
 - ft_put_hexa - *write a number in hexa base*
 - ft_str_rev - *Ret a string that is the reversal of the original str hello -> olleh*
+- max - *Returns the max value of an array*
 
 - ###### printf
 	- ft_printf
