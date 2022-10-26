@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/26 18:29:32 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:01:45 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-/* MORE FUNCTIONS ADDED */
+/* MORE FUNCTIONS ADDED  */
 void	ft_put_bin(unsigned int num); //Print int to binary
 void	ft_put_oct(unsigned int num); //Print int to octal
 void	ft_put_hexa(unsigned int num);//Print int to Hexadecomal
@@ -86,7 +86,7 @@ char	*ft_dec_to_hexa(int num); //Return a decimal number in hexa base
 int		max(int *tab, unsigned int len); //Returns the max value of an array
 int		min(int *tab, unsigned int len); //Returns the min value of an array
 
-//ft_pritnf and its stuff
+//FT_PRINTF AND RELATED FUNCTIONS
 int		ft_printf(char const *input, ...); //Something like prinf
 int		ft_print_char(int c); //Print a char and return the num of chars printed
 int		ft_print_unsigned(unsigned int n); //print an unsigned int (ret)
@@ -96,7 +96,7 @@ int		ft_print_string(char *s); //print a string (return num chars printed)
 int		ft_print_int(int n); //print an int numbber (return num chars printed)
 int		ft_print_hexa(unsigned int num, char format);//print an int->hexa (ret)
 
-// get next line ans its stuff
+// GET_NEXT_LINE AND RELATED FUNCTIONS
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE BUFSIZ
 # endif
