@@ -32,17 +32,16 @@ if Buffer_size is undefined, the program gets the default size for the buffer_si
 
 - **ft_read** - *the function read from the file*   
 	>Ft_read allocate memory to save the line that is going to read
-	Then read the file until finds a *'\n'* or until the bufffer_size is over.
-	Then call to ft_free.
+	Then read the file until finds a *'\n`.
 
 - **ft_free** - *join and free*
 
 - **get_line_gnl** - *gets the line we want to return*
-	>When '\n' is found but the Buffer_size is not over yet This function takes the current line.
+	>This function takes the current line.
 
 - **save_rest** - *gets the rest of the line.*   
-	>When '\n' is found but the Buffer_size is not over yet the function takes the current line
-	but we need to keep the rest of the line until buffer_size, to use it in case we call the
+	>When '\n' is found the function takes the current line
+	but we need to keep the rest of the line to use it in case we call the
 	function get_next_line more than once (in a loop for example).
 
 ## BONUS PART
