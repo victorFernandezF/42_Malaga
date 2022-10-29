@@ -110,6 +110,7 @@ with your own. Take the time to expand your libft throughout the year.
 - ft_str_rev - *Ret a string that is the reversal of the original str hello -> olleh*
 - max - *Returns the max value of an array*
 - min - *Returns the min value of an array*
+- ft_pow - *Returns the pow*
 
 - ###### printf
 	- ft_printf
