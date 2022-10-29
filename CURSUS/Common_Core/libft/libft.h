@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:27:10 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/26 19:01:45 by victofer         ###   ########.fr       */
+/*   Updated: 2022/10/29 13:49:21 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int		ft_dec_to_oct(int num); //Return a decimal number in octal base
 char	*ft_dec_to_hexa(int num); //Return a decimal number in hexa base
 int		max(int *tab, unsigned int len); //Returns the max value of an array
 int		min(int *tab, unsigned int len); //Returns the min value of an array
+int		ft_pow(int n, int pow); //pow (pow(2, 3) -> 2 * 2 * 2) you know...
 
 //FT_PRINTF AND RELATED FUNCTIONS
 int		ft_printf(char const *input, ...); //Something like prinf
