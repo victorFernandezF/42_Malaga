@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 13:26:47 by victofer          #+#    #+#             */
-/*   Updated: 2022/11/04 13:56:40 by victofer         ###   ########.fr       */
+/*   Updated: 2022/11/04 16:03:10 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ int	ft_spaces(char c)
 int	ft_base(char c, int base)
 {
 	char	*pos;
+	char	*pos2;
 	int		i;
 
 	pos = "0123456789abcdef";
+	pos2 = "0123456789ABCDEF";
 	i = 0;
 	while (i < base)
 	{
-		if (c == pos[i])
+		if (c == pos[i] || c == pos2[i])
 			return (i);
 		i++;
 	}
@@ -61,4 +63,13 @@ int	ft_atoi_base(char *str, int base)
 	if (neg)
 		return (-res);
 	return (res);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc != 3)
+		return (0);
+	if (atoi(argv[2]) > 16)
+		return (0);
+	printf("%i", ft_atoi_base(argv[1], atoi(argv[2])));
 }
