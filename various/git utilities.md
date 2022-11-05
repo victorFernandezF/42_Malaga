@@ -9,6 +9,9 @@
 - git pull: Get all the new changes from the repo to the local directory.
 - git stats: show a list with te files added and the files that are not.
 
+- git reset <file>: undo "git add "file"
+- git reset: undo all changes for all files "git add ."
+
 ### Git alias
 - created alias
 	- git config --global alias.<your_alias_name> <command>
