@@ -6,7 +6,7 @@
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:36:58 by victofer          #+#    #+#              #
-#    Updated: 2022/10/29 14:17:30 by victofer         ###   ########.fr        #
+#    Updated: 2022/11/18 11:17:28 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_split.c max.c min.c ft_pow.c\
 	ft_printf.c ft_print_c_str_int.c ft_print_unsigned.c ft_print_hexa.c ft_print_ptr.c \
-	ft_put_hexa.c ft_put_bin.c ft_put_oct.c ft_str_rev.c \
-	get_next_line.c get_next_line_utils.c get_next_line_bonus.c get_next_line_utils_bonus.c
+	ft_put_hexa.c ft_put_bin.c ft_put_oct.c ft_str_rev.c ft_change_bases.c \
 	
 OBJ= $(SRC:.c=.o)
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
@@ -43,7 +42,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
-	@echo "$(GREEN)⦿ libft compiled successfully ☺$(END)"
+	@echo "$(YELLOW)| $(GREEN)libft compiled successfully    $(YELLOW)|$(END)"
 
 
 bonus: $(OBJ) $(BONUS_OBJ)
@@ -52,7 +51,9 @@ bonus: $(OBJ) $(BONUS_OBJ)
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
-	@echo "$(MAGENTA)⦿ Everything from Libft cleaned $(END)"
+	rm -rf *.gch
+	rm -rf *.dSYM
+	@echo "$(YELLOW)| $(MAGENTA)Everything from Libft cleaned     $(YELLOW)|$(END)"
 
 fclean: clean
 	rm -f $(NAME)

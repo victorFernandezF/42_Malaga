@@ -5,19 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: victofer <victofer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/29 10:35:37 by victofer          #+#    #+#              #
-#    Updated: 2022/11/07 18:21:33 by victofer         ###   ########.fr        #
+#    Created: 2022/11/15 10:38:55 by victofer          #+#    #+#              #
+#    Updated: 2022/11/18 11:01:35 by victofer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC=cc
-NAME= minitalk
-CFLAGS=-Wall -Wextra -Werror
-OPTIONS=-c -I.
-SRC = server.c client.c
-OBJ= *.o
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+NAME = minitalk
 
-# - COLOURS - 
+SRC = client_dir/client.c server_dir/server.c
+SRC_BONUS = client_dir/client_bonus.c server_dir/server_bonus.c
+OBJS = $(SRC:.c = .o)
+
 GREEN=\033[0;32m
 RED=\033[0;31m
 BLUE=\033[0;34m
@@ -25,55 +25,42 @@ YELLOW = \033[0;93m
 MAGENTA = \033[0;95m
 END=\033[0m
 
-# - MESSAGES - 
-MSG_COMPILING = @echo "$(YELLOW) compilling ... $(END)"
-MSG_LIBFT_HEADER = @echo "$(YELLOW)-------- LIBFT ----------$(END)"
-MSG_MINITALK_HEADER = @echo "$(YELLOW)------- MINITALK --------$(END)"
-MSG_MINITALK_OK = @echo "$(GREEN)⦿ minitalk compiled succesfully. ☺$(END)"
-MSG_EVERYTHING_OK = @echo "$(GREEN)⦿ --- EVERYTHING COMPILED. ☺ ---$(END)"
-MSG_CLEANING = @echo "$(YELLOW)Cleanning...$(END)"
-MSG_CLEAN_LIBFT = @echo "$(YELLOW)-------- CLEAN LIBFT ----------$(END)"
-MSG_CLEAN_MINITALK = @echo "$(YELLOW)------- CLEAN MINITALK --------$(END)"
-MSG_EVERYTHIN_CLEANED = @echo "$(MAGENTA)⦿ Everything from Minitalk cleaned.$(END)"
-
+$(NAME): $(OBJS)
+	@echo "$(YELLOW)----------- COMPILING ------------$(END)"
+	@make -sC ./libft
+	@ar -rc $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) libft/libft.a server_dir/server.c -o server
+	@$(CC) $(CFLAGS) libft/libft.a client_dir/client.c -o client
+	@echo "$(YELLOW)| $(GREEN)Minitalk compiled successfully $(YELLOW)|$(END)"
+	@echo "$(YELLOW)----------------------------------$(END)"
+	
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(MSG_COMPILING)
-	sleep 1
-	$(MSG_LIBFT_HEADER)
-	$(MAKE) make-libft
-	$(MSG_MINITALK_HEADER)
-	ar -crs $(NAME) $(OBJ)
-	$(MSG_MINITALK_OK)
-	$(MSG_EVERYTHING_OK)
-	
-	
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) $(OPTIONS) $(SRC)
-	
-make-libft:
-	cd libft && $(MAKE)
-	cd libft && $(MAKE) bonus
-	
-fclean-libft:
-	cd libft && $(MAKE) fclean
-		
+re: fclean all
+
+bonus: all
+	@echo "$(YELLOW)------------ COMPILING BONUS ------------$(END)"
+	@$(CC) $(CFLAGS) libft/libft.a server_dir/server_bonus.c -o server_bonus
+	@$(CC) $(CFLAGS) libft/libft.a client_dir/client_bonus.c -o client_bonus
+	@echo "$(YELLOW)| $(GREEN)Minitalk (Bonus) compiled succesfully $(YELLOW)|$(END)"
+	@echo "$(YELLOW)-----------------------------------------$(END)"
+
 clean:
-	$(MSG_CLEANING)
-	sleep 1
-	$(MSG_CLEAN_LIBFT)
-	$(MAKE) fclean-libft
-	$(MSG_CLEAN_MINITALK)
-	rm -f $(OBJ)
-	$(MSG_EVERYTHIN_CLEANED)
-	
+	@echo "$(YELLOW)------------- CLEANING --------------$(END)"
+	@cd libft && make clean
+	@rm -rf server_dir/server.o
+	@rm -rf cllient_dir/client.o
+	@rm -rf server_dir/server_bonus.o
+	@rm -rf cllient_dir/client_bonus.o
+	@rm -rf ./minitalk
+	@rm -rf *.dSYM
+	@echo "$(YELLOW)| $(MAGENTA)Everything from minitalk cleaned  $(YELLOW)|$(END)"
+	@echo "$(YELLOW)-------------------------------------$(END)"
 	
 fclean: clean
-	rm -f $(NAME)
-	
+	@rm -rf server	
+	@rm -rf client
+	@rm -rf server_bonus	
+	@rm -rf client_bonus
 
-re: fclean all	
-
-.SILENT: $(OBJS)
 .PHONY: clean fclean all re
