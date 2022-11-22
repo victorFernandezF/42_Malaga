@@ -12,7 +12,7 @@
 |             |       Unix      |
 
 ### ESTADO
-#### En Proceso
+#### Terminado
 
 <!-- ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive) -->
 ![result](https://img.shields.io/badge/RESULTADO-125%25-green)
@@ -32,7 +32,7 @@
 |             |       Unix      |
 
 ### STATUS
-#### In Progress
+#### Done
 
 ![result](https://img.shields.io/badge/RESULT-1250%25-green)
 <!-- ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive) -->
