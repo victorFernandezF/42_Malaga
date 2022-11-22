@@ -14,8 +14,8 @@
 ### ESTADO
 #### En Proceso
 
-![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive)
-<!-- ![result](https://img.shields.io/badge/RESULTADO-120%25-green) -->
+<!-- ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive) -->
+![result](https://img.shields.io/badge/RESULTADO-125%25-green)
 
 <hr/>
 
@@ -34,5 +34,5 @@
 ### STATUS
 #### In Progress
 
-<!-- ![result](https://img.shields.io/badge/RESULT-120%25-green) -->
-![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive)
+![result](https://img.shields.io/badge/RESULT-1250%25-green)
+<!-- ![Result](https://img.shields.io/badge/RESULT-IN_PROGRESS-inactive) -->
