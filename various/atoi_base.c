@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   atoi_base.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/24 10:17:55 by victofer          #+#    #+#             */
+/*   Updated: 2022/11/24 10:17:55 by victofer         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
-int		ft_iswhitespace(char const c)
+int spaces(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t' || c == '\v'
 		|| c == '\r' || c == '\f')
@@ -9,52 +21,58 @@ int		ft_iswhitespace(char const c)
 	return (0);
 }
 
-int	base(int c, int base)
+int	ft_base(const char c, int base)
 {
-	char *str = "0123456789abcdef";
-	char *str2 = "0123456789ABCDEF";
-	int  i = 0;
+	char	*upper;
+	char	*lower;
+	int		i;
 
+	i = 0;
+	upper = "0123456789ABCDEF";
+	lower = "0123456789abcdef";
 	while (i < base)
 	{
-		if (c == str[i] || c == str2[i])
+		if (c == upper[i] || c == lower[i])
 			return (i);
 		i++;
 	}
 	return (-1);
 }
 
-int ft_atoi_base(const char *str, int str_base)
+int	ft_atoi_base(const char *str, int base)
 {
-	int nb = 0;
-	int negatif = 0;
-	int	i = 0;
-	while (ft_iswhitespace(str[i]))
+	int	i;
+	int	neg;
+	int	res;
+
+	i = 0;
+	res = 0;
+	while (spaces(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
-			negatif = 1;
+			neg = 1;
 		i++;
 	}
-	while (base(str[i], str_base) != -1)
+	while (ft_base(str[i], base) != -1)
 	{
-		nb = nb * str_base;
-		nb = nb + base(str[i], str_base);
+		res = res * base;
+		res = res + ft_base(str[i], base);
 		i++;
 	}
-	if (negatif)
-		return (-nb);
-	return (nb);
+	return (res);
 }
 
-int	main(int ac, char **av)
+int	main(void)
 {
-	int		nb;
-	if (ac >= 3)
-	{
-		nb = ft_atoi_base(av[1], atoi(av[2]));
-		printf("%d\n", nb);
-	}
+	char	*str;
+	int		base;
+	int		res;
+
+	str = "101010";
+	base = 2;
+	res = ft_atoi_base(str, base);
+	printf("%i", res);
 	return (0);
 }

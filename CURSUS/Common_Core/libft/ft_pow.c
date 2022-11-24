@@ -6,11 +6,11 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 13:36:48 by victofer          #+#    #+#             */
-/*   Updated: 2022/10/29 13:47:54 by victofer         ###   ########.fr       */
+/*   Updated: 2022/11/23 19:41:11 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+/* #include "libft.h"
 
 int	ft_pow(int n, int pow)
 {
@@ -25,4 +25,4 @@ int	ft_pow(int n, int pow)
 		i++;
 	}
 	return (res);
-}
+} */
