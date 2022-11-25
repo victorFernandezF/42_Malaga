@@ -6,7 +6,7 @@
 /*   By: victofer <victofer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 17:19:08 by victofer          #+#    #+#             */
-/*   Updated: 2022/09/23 18:16:29 by victofer         ###   ########.fr       */
+/*   Updated: 2022/11/24 19:30:02 by victofer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,13 @@ char	*ft_itoa(int n)
 	itoa = ft_make_itoa(itoa, n, len);
 	itoa[len] = '\0';
 	return (itoa);
+}
+
+int	main(void)
+{
+	int	n;
+
+	n = -100;
+	printf("char %s\n", ft_itoa(n));
+	return (0);
 }
