@@ -4,7 +4,7 @@
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/victorFernandezF/42_Malaga?style=for-the-badge)
 
 Exercises and proyects from my student experience.
-Feel free to look my code and compare. But remember. Do not copy if you don't understand what you are doing.
+Feel free to look my code and compare. But remember. Do not copy if you don't understand what you are doing. 
 
 ### PROJECTS
 - Rank 0
