@@ -15,7 +15,8 @@ Feel free to look my code and compare. But remember. Do not copy if you don't un
 	- get_next_line -> *finished*
 - Rank 2
 	- minitalk -> *finished*
-        - So_long -> *finished* 
+        - So_long -> *finished*
+        - Push_swap -> in *progress*
 
 
 [![victorFernandezF/42_Malaga - GitHub](https://gh-card.dev/repos/victorFernandezF/42_Malaga.svg)](https://github.com/victorFernandezF/42_Malaga)
