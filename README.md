@@ -14,8 +14,8 @@ Feel free to look my code and compare. But remember. Do not copy if you don't un
 	- ft_printf -> *finished*
 	- get_next_line -> *finished*
 - Rank 2
-	- minitalk -> *finished*
-        - So_long -> *finished*
+	- minitalk -> *finished* 
+        - So_long -> *finished* 
         - Push_swap -> in *progress*
 
 
